@@ -133,3 +133,5 @@ Nhắc lại là: <span style="font-size:larger;">**KHÔNG BỎ QUA CHƯƠNG**</
 Một dự án từ [Khu thoát nghiện](https://khuthoatnghien.github.io).
 
 [Tải tệp EPUB](noi-dung-khieu-dam.epub)
+
+Lý do đặt tên của sách: Từ tên của tác phẩm "Thoát Á Luận" (脱亜論).
