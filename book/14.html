@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Người nghiện thường - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="người-nghiện-thường"><a class="header" href="#người-nghiện-thường">Người nghiện thường</a></h1>
+<p>Những người nghiện nặng thường ghen tị với những người nghiện porn "bình thường". Chúng ta đều đã từng gặp những kiểu người này: "<em>Tao có thể nhịn cả tuần không xem cũng được</em>" Chúng ta ước gì mình cũng được như vậy. Có thể khó tin, nhưng không người nghiện nào thực sự thích thú việc mình là người nghiện cả. Đừng bao giờ quên:</p>
+<blockquote>
+<p>Không người nghiện nào từng quyết định trở thành người nghiện, dù là bình thường hay kiểu nào khác.</p>
+<p>Vì vậy, tất cả người nghiện đều cảm thấy mình thật đần.</p>
+<p>Vì vậy, tất cả người nghiện đều phải tự dối mình và dối người khác trong một nỗ lực vô ích để biện minh cho sự ngu của mình.</p>
+</blockquote>
+<p>Những người cuồng golf khoe về tần suất họ chơi và mong muốn được chơi golf, vậy tại sao người nghiện porn lại khoe khoang về việc họ thủ dâm ít như thế nào? Nếu đó là tiêu chí thực sự, thì chắc chắn danh hiệu cao quý nhất phải là hoàn toàn không thủ dâm mới đúng phải không?</p>
+<p>Nếu ai đó nói với bạn, "<em>Tôi có thể nhịn ăn cà rốt cả tuần vẫn oke</em>", bạn sẽ nghĩ mình đang nói chuyện với một đứa dở hơi. Nếu thích cà rốt thì tại sao lại phải nhịn không ăn cà rốt cả tuần? Vì vậy, khi người nghiện bảo rằng đã sống sót được cả tuần mà không xem porn, người nghiện đó đang cố gắng thuyết phục bản thân và cả bạn rằng "Không vấn đề gì, tôi ổn". Nhưng sẽ không cần thiết phải đưa ra tuyên bố như vậy nếu họ thực sự <em>vẫn ổn</em>. Hoặc có thể hiểu là "<em>Tao đã cố gắng sống sót được cả tuần mà không có porn.</em>" Giống như những người nghiện khác, họ hy vọng rằng sau tuần này họ có thể sống sót được cả quãng đời còn lại. Nếu chỉ có thể sống sót được một tuần, bạn có thể tưởng tượng lần xem porn sau đó phải quý giá đến mức nào, khi họ đã cảm thấy thiếu thốn cả tuần trời?</p>
+<p>Đây là lý do tại sao những người nghiện "thường" thực chất lại nghiện nặng hơn những người nghiện nặng. Không chỉ ảo tưởng về "sự tận hưởng" lớn hơn, mà họ còn ít động lực để dừng xem porn hơn vì họ dành ít thời gian cho nó hơn và do đó ít bị tổn hại sức khỏe hơn. Đôi khi, họ có thể gặp phải các rối loạn chức năng tình dục (sexual dysfunction), nhưng không chắc chắn nguyên nhân do đâu và vì vậy đổ lỗi cho các yếu tố khác. Hãy nhớ rằng, khoái lạc duy nhất mà người nghiện nhận được là trong chu kỳ "tìm kiếm-và-theo đuổi" (search-and-seek) dopamine và việc giải tỏa cơn vật vã, như đã giải thích trước đó. Khoái lạc chỉ là ảo ảnh — hãy hình dung con tiểu quỷ như một cơn ngứa quá nhẹ để chúng ta có thể nhận ra trong phần lớn thời gian.</p>
+<p>Nếu bạn có một cơn ngứa dai dẳng, xu hướng tự nhiên là gãi. Khi các mạch tưởng thưởng ngày càng trở nên miễn nhiễm với dopamine và opioid, xu hướng tự nhiên là <em>edging</em> (cố tình kéo dài khoái cảm trước khi lên đỉnh), leo thang, xem liên tục, tìm kiếm sự mới lạ, tìm kiếm yếu tố gây sốc, v.v. Có bốn yếu tố chính ngăn cản người nghiện xem liên tục không ngừng nghỉ:</p>
+<p><strong>Thời gian.</strong>
+Đa phần đều không có nhiều thời gian đến thế</p>
+<p><strong>Sức khỏe.</strong>
+Để giải tỏa cơn ngứa, chúng ta phải tiêu thụ tất cả "tài liệu miễn phí" có sẵn, và thậm chí hơn thế nữa. Khả năng đối phó với kiểu xem liên tục như vậy khác nhau ở mỗi người, và vào những thời điểm và tình huống khác nhau trong cuộc đời họ. Điều này hoạt động như một cơ chế kiềm chế tự động (automatic restraint).</p>
+<p><strong>Kỷ luật.</strong>
+Kỷ luật được áp đặt bởi xã hội, bởi công việc, bạn bè và người thân của người nghiện, hoặc thậm chí có thể bởi chính người nghiện do cuộc giằng co tự nhiên diễn ra trong tâm trí của họ.</p>
+<p><strong>Trí tưởng tượng.</strong>
+Chính sự thiếu trí tưởng tượng khiến người ta đánh giá thấp mức độ gây sốc, tính mới lạ, và những "giá trị" khác của clip, theo cảm tính cá nhân.</p>
+<p>Thật dễ dàng để nghĩ về những người nghiện 'không bình thường' là yếu đuối, không thể hiểu tại sao những người khác có thể giới hạn 'lượng tiêu thụ' của họ. Tuy nhiên, những người nghiện nặng nên nhớ rằng hầu hết những người nghiện thường đơn giản là không có khả năng xem liên tục không ngừng nghỉ, điều này đòi hỏi trí tưởng tượng và sức chịu đựng rất lớn. Một số người nghiện "mỗi tuần một lần" mà những người nghiện nặng có xu hướng ghen tị, về thể chất không có khả năng làm nhiều hơn, hoặc vì công việc, xã hội hoặc sự căm ghét bản thân khi trở nên nghiện không cho phép họ làm vậy.</p>
+<p>Có lẽ nên đưa ra một vài định nghĩa để rõ ràng hơn:</p>
+<p><strong>Người không xem (The non-user)</strong></p>
+<p>Là người chưa bao giờ rơi vào cái bẫy, nhưng không nên tự mãn. Họ là người không xem chỉ là do may mắn hoặc nhờ vào sự tốt lành. Tất cả người nghiện đều từng tin chắc rằng họ sẽ không bao giờ bị nghiện, và một số người không xem thi thoảng vẫn thử xem "một clip thôi".</p>
+<p><strong>Người nghiện "thường"</strong></p>
+<p>Có thể phân ra là hai loại cơ bản:</p>
+<ol>
+<li>Người nghiện đã rơi vào cái bẫy nhưng không nhận thức được — đừng ghen tị với những người nghiện như này. Họ chỉ đơn thuần là đang gặm miếng phô mai của bẫy chuột, và rất có thể sẽ sớm trở thành người nghiện nặng. Hãy nhớ rằng, giống như tất cả những người nghiện rượu đều bắt đầu là những người uống rượu xã giao, tất cả người nghiện porn cũng bắt đầu một cách bình thường.</li>
+<li>Người nghiện đã từng là người nghiện nặng, và vì vậy nghĩ rằng họ không thể dừng xem porn được. Những người nghiện này là những người đáng buồn nhất trong tất cả, và họ thuộc nhiều loại khác nhau, mỗi loại cần có những phần mô tả riêng</li>
+</ol>
+<p><strong>Người nghiện "mỗi ngày một lần"</strong></p>
+<p>Nếu họ thật sự tận hưởng việc "được" lên đỉnh nhờ thủ dâm, vậy thì tại sao chỉ dùng porn trên mạng mỗi ngày một lần?  Nếu họ hoàn toàn có thể bỏ được, vậy thì tại sao còn phải bận tâm dùng làm gì? Hãy nhớ rằng, cái gọi là "thói quen" này – thực chất là bạn đang tự đập đầu vào tường, chỉ để lúc dừng lại thì cảm thấy "dễ chịu" hơn thôi. Người nghiện một lần một ngày chỉ xoa dịu được cơn vật vã của mình trong chưa đầy một tiếng đồng hồ mỗi ngày. Dù không nhận ra, phần lớn thời gian còn lại trong ngày của họ đều dùng để đập đầu vào bức tường đó, và cứ thế suốt phần lớn cuộc đời. Họ dùng một lần mỗi ngày chỉ vì không dám mạo hiểm bị phát hiện, hoặc gây hại cho sức khỏe thần kinh của mình. Rất dễ để thuyết phục người nghiện nặng rằng họ thật ra không hề thích thú gì việc này, nhưng lại khó khăn hơn rất nhiều để thuyết phục một người chỉ dùng "cho vui". Bất cứ ai từng cố gắng cắt giảm đều sẽ biết đó là một cực hình, và gần như chắc chắn sẽ khiến bạn mắc kẹt trong nghiện ngập suốt đời.</p>
+<p><strong>Người nghiện bị từ chối</strong></p>
+<p>Họ đòi hỏi quyền được lên đỉnh mỗi ngày, nhưng bạn tình của họ không phải lúc nào cũng sẵn lòng đáp ứng yêu cầu đó. Ban đầu, họ xem porn để lấp đầy khoảng trống này, nhưng khi bước lên "máng trượt nước" đầy thú vị, họ bị mắc kẹt trong một vòng xoáy của sự mới lạ, yếu tố gây sốc, hình ảnh siêu thường, v.v. Trên thực tế, họ hài lòng với sự từ chối của bạn tình vì nó mang lại một cái cớ để họ có thể quay vào góc tối riêng của họ. Nếu porn mang lại cho bạn nhiều điều tuyệt vời đến vậy thì cần gì có bạn tình? Hãy giải thoát cho bạn tình của bạn đi. Họ thậm chí còn không tận hưởng được các lần xem porn khi phải "mang" bạn tình của mình trong tâm trí. Đến một lúc nào đó, họ bắt đầu tìm kiếm sự "từ chối" từ bạn đời ngoài đời thực, chỉ để tự tay trao cho mình một lời biện hộ <em>chính đáng</em> và lao vào những trang phim đen của thế giới ngầm.</p>
+<p><strong>Người nghiện "ăn kiêng"</strong></p>
+<p>Còn được gọi là: "<em>Tôi có thể dừng lại bất cứ khi nào tôi muốn. Tôi đã làm điều đó hàng ngàn lần rồi.</em>"</p>
+<p>Nếu họ nghĩ việc "ăn kiêng" giúp họ sung sức hơn để tán tỉnh ai đó, thì tại sao họ vẫn phải duy trì cái chế độ 4 ngày một lần ấy? Chẳng ai đoán trước được tương lai, nhỡ đâu cơ hội gặp gỡ tình cờ ập đến chỉ một tiếng sau "lịch trình" của bạn thì sao?  Rồi nữa, nếu thỉnh thoảng "thông tắc ống nước" là tốt để giải tỏa căng thẳng, vậy thì tại sao không "thông" mỗi ngày? Khoa học đã chứng minh rằng thủ dâm không hề cần thiết để giữ cho bộ phận sinh dục khỏe mạnh, và porn trên mạng thì càng không cần thiết. Ngay cả khi đúng là như vậy đi nữa, thì chẳng có "guru" tán gái nào từng đọc về tác hại thần kinh của nó lại dám khuyên xem những bộ porn siêu kích thích cả. Sự thật là, người "ăn kiêng" porn vẫn chưa cai được. Dù họ đã thoát khỏi nghiện về thể xác, họ vẫn còn đó vấn đề gốc rễ là bị tẩy não. Họ hy vọng mỗi lần dừng lại sẽ là dứt điểm, nhưng chẳng mấy chốc lại sập bẫy y như cũ.</p>
+<p>Hầu hết người nghiện thực sự ghen tị với những người "cai rồi lại tái" này và nghĩ về việc người "ăn kiêng" "may mắn" như thế nào khi có thể kiểm soát việc sử dụng của họ. Tuy nhiên, họ bỏ qua một thực tế rằng người "ăn kiêng" không kiểm soát được việc sử dụng của họ — khi họ đang sử dụng, họ ước gì mình đã không làm vậy. Họ trải qua sự rắc rối của việc dừng xem porn, sau đó bắt đầu cảm thấy thiếu thốn và lại rơi vào cái bẫy, ước gì mình đã không tái nghiện. Đã chẳng được gì, lại còn rước thêm họa vào thân. Nếu bạn nghĩ kĩ mà xem, điều này cũng đúng trong cuộc sống của những người nghiện khi họ được phép xem porn — vừa coi đó là quyền lợi đương nhiên vừa ước gì mình đã không làm vậy. Chỉ khi cảm thấy "thiếu", porn mới trở nên quý giá. Hội chứng "trái cấm" là một trong những tình thế tiến thoái lưỡng nan khủng khiếp đối với người nghiện. Họ không bao giờ có thể thắng vì họ đang dằn vặt bản thân chỉ vì chạy theo một ảo mộng, một ảo ảnh. Chỉ có một cách duy nhất để có thể thắng, đó là ngừng tự hành hạ bản thân bằng cách ngừng xem porn.</p>
+<p><strong>Người nghiện "chỉ xem hàng static, hàng nhẹ đô, hàng nhà làm"</strong></p>
+<p>Đúng vậy, ai cũng bắt đầu như thế cả, nhưng chẳng phải kinh ngạc sao khi "độ sốc" trung bình của các đoạn phim dường như tăng lên rất nhanh, và trước khi chúng ta kịp nhận ra thì đã cảm thấy thiếu thốn (sự chai lì)? Cái mới lạ cũng chẳng còn với porn tĩnh (static), nên ta "cắn răng" trả tiền để đổi lấy chút mỡ thừa rồi trượt dài trên máng trượt khiến ta đắm chìm trong cảm giác bực bội và tội lỗi. Điều tệ nhất bạn có thể làm là dùng ảnh của partner (đương nhiên là phải được cho phép) để thủ dâm. Tại sao ư? Vì trong quá trình đó, bạn đang lập trình lại não bộ để hướng tới những cơn phê dopamine do tìm kiếm, săn lùng và sự đa dạng mang lại. Về mặt hóa học, máng trượt porn trong não chính là DeltaFosB tích tụ, nên bạn sẽ thấy mình gặp khó khăn khi ở bên người yêu ngoài đời thực.</p>
+<p>Một cái bẫy khác trong danh mục này là porn 'nghiệp dư' và 'tự làm'. Hầu hết đều là giả và bạn biết điều đó, cộng với việc bạn cũng sẽ không dừng lại ở cái đầu tiên lọt vào mắt mình, mà thay vào đó tiếp tục tìm kiếm và săn lùng. Hãy nhớ kỹ, não bộ không chỉ thèm khát cực khoái, mà chính tính mới lạ của cuộc đi săn mới là thứ bơm nhựa sống vào máng trượt nước nghiện ngập. Vấn đề không nằm ở nội dung porn – dù là nghiệp dư hay chuyên nghiệp – mà chính là những đợt sóng dopamine ào ạt trong não bộ, gây ra sự dung nạp và nhu cầu bão hòa ngày càng tăng. Porn hủy hoại cơ chế vận hành bình thường của não bộ, còn thủ dâm thì gây nhiễu loạn phản ứng giữa cơ bắp và não bộ; cực khoái nhấn chìm não bộ trong opioid, và mở đường cho lối mòn nghiện ngập càng thêm dễ đi trong những lần tới.</p>
+<p><strong>Người nghiện "đã cai rồi và thỉnh thoảng chỉ xem một lúc"</strong></p>
+<p>Theo một cách nào đó, những người nghiện "chỉ xem một lúc" là những người thảm hại nhất trong tất cả những kiểu trên. Hoặc là sống cuộc đời tin rằng mình đang cảm thấy "thiếu", hoặc thường xuyên hơn, việc thỉnh thoảng "chỉ xem một lúc" trở thành hai lần, trượt dài xuống con dốc trơn trượt, sớm hay muộn lại rơi trở lại thành người nghiện nặng. Họ lại sa vào chính cái bẫy mà họ đã rơi vào ngay từ đầu.</p>
+<p>Có hai nhóm người dùng “vô tình” khác cũng đáng chú ý. Nhóm đầu tiên là những người thỉnh thoảng thủ dâm vì xem phải mấy đoạn clip nóng hay ảnh sex của người nổi tiếng đang gây sốt trên mạng, hoặc do vô tình lướt thấy thứ gì đó ở trường hay chỗ làm rồi “lỡ tay mang về nhà”. Thực ra họ vốn là người không xem, nhưng lại có cảm giác như mình đang bỏ lỡ điều gì đó. Họ muốn "tham gia cuộc vui", mà thật ra phần lớn chúng ta đều bắt đầu như vậy. Nhưng lần sau, hãy để ý: sau một thời gian, người nổi tiếng mà bạn từng khao khát chẳng còn tạo cảm giác hứng thú như trước nữa. Càng tưởng tượng về những người quá xa tầm với, thì cảm giác hụt hẫng sau cơn cực khoái lại càng ê chề.</p>
+<p>Nhóm thứ hai đang ngày càng được nhắc đến nhiều hơn gần đây — có thể hiểu rõ nhất qua một trường hợp được chia sẻ trên mạng.</p>
+<p>Một người phụ nữ có nghề nghiệp ổn định đã đọc truyện sex trên mạng suốt nhiều năm, đều đặn mỗi đêm một lần — không hơn, không kém. Cô ấy là một người phụ nữ rất mạnh mẽ. Hầu hết người nghiện sẽ tự hỏi tại sao cô ấy lại muốn dừng lại ngay từ đầu — và sẵn lòng chỉ ra rằng không có nguy cơ PIED, hoặc PE trong trường hợp của cô ấy (điều này không đúng). Cô ấy thậm chí còn không sử dụng hình ảnh tĩnh (static), những câu truyện còn "lành tính" hơn nhiều so với bất kỳ "tài liệu học tập" nào mà chính những người nghiện nặng ở trên sử dụng hàng ngày.</p>
+<p>Họ phạm sai lầm khi cho rằng những người nghiện thường hạnh phúc hơn và kiểm soát tốt hơn. Họ có thể kiểm soát tốt hơn, nhưng chắc chắn họ không hạnh phúc. Trong trường hợp của người phụ nữ này, cô ấy không hài lòng với bạn tình cũng như tình dục thật, và rất dễ cáu kỉnh khi đối phó với những căng thẳng hàng ngày của mình. Những người thân yêu nhất của cô ấy không thể hiểu được điều gì đang làm phiền cô ấy. Ngay cả khi cô ấy tự thuyết phục bản thân rằng mình không cần phải sợ hãi việc dùng porn bằng cách tự biện minh, cô ấy vẫn thấy mình không thể tận hưởng được những mối quan hệ thật sự, vốn dĩ luôn có những thăng trầm. Trung tâm tưởng thưởng trong não bộ của cô ấy mất khả năng tận dụng những yếu tố giải tỏa căng thẳng thông thường trong cuộc sống, do não bộ bị “dội bom” dopamine hàng ngày. Việc các thụ thể trong não bộ của cô ấy bị suy giảm chức năng sau đó đã khiến cô ấy trở nên u sầu trong phần lớn thời gian. Giống như hầu hết mọi người, cô ấy có một nỗi sợ hãi lớn đối với mặt tối của porn và cách đối xử với phụ nữ — trước lần đầu tiên của mình. Cuối cùng, cô ấy trở thành nạn nhân của sự tẩy não từ xã hội và thử trang web đầu tiên của mình. Không giống như hầu hết những người đầu hàng và trở thành người xem liên tục, khi nhìn thấy những clip bạo lực tục tĩu, cô ấy đã chống lại sự trượt dốc.</p>
+<p>Tất cả những gì bạn từng tận hưởng ở porn là việc kết thúc cơn thèm muốn bắt đầu trước đó, dù là cơn thèm muốn thể xác gần như không thể nhận thấy, hay sự tra tấn tinh thần khi không được phép gãi cơn ngứa. Bản thân porn là thuốc độc, đó là lý do tại sao bạn chỉ chịu đựng ảo tưởng về việc tận hưởng nó sau những khoảng thời gian kiêng khem. Tương tự như đói hoặc khát, bạn càng chịu đựng nó lâu, khoái lạc càng lớn khi cuối cùng được giải tỏa. Họ mắc một sai lầm chết người khi tin rằng porn chỉ là thói quen và nghĩ: "<em>Nếu tôi có thể giữ nó ở một mức độ nhất định hoặc chỉ vào những dịp đặc biệt, não và cơ thể tôi sẽ chấp nhận nó. Sau đó, tôi có thể tiếp tục sử dụng ở mức đó hoặc giảm nó hơn nữa nếu tôi muốn.</em>"</p>
+<p>Hãy làm rõ điều này, 'thói quen' không tồn tại. Porn là một cơn nghiện, tương tự như nghiện ma túy, với xu hướng tự nhiên là giải tỏa cơn vật vã, chứ không phải chịu đựng chúng. Để giữ nó ở mức bạn hiện đang ở, bạn sẽ cần phải vận dụng một lượng kỷ luật và ý chí to lớn trong suốt phần đời còn lại. Khi trung tâm tưởng thưởng trong não của bạn trở nên dung nạp với dopamine và opioid, nó muốn ngày càng nhiều hơn, chứ không phải ngày càng ít đi.</p>
+<p>Khi porn bắt đầu dần dần phá hủy hệ thần kinh, lòng can đảm, sự tự tin và khả năng kiểm soát xung động của bạn, bạn ngày càng không thể cưỡng lại việc giảm khoảng thời gian giữa mỗi lần xem porn. Đây là lý do tại sao, trong những ngày đầu, chúng ta có thể dùng hoặc không dùng nó. Nếu chúng ta nhận thấy dấu hiệu của điều gì đó bất ổn về tinh thần hoặc thể chất, chúng ta chỉ cần dừng lại. Đừng ghen tị với người phụ nữ này — khi bạn chỉ xem một lần mỗi hai mươi bốn giờ, nó có vẻ là thứ quý giá nhất trên đời, biến porn thành "trái cấm". Trong nhiều năm, người phụ nữ đáng thương này đã ở trung tâm của một cuộc giằng co.</p>
+<p>Mặc dù không thể ngừng sử dụng, nhưng cô ấy sợ phải leo thang sang xem clip trực tuyến. Trong hai mươi ba giờ mười phút mỗi ngày, cô ấy phải chống lại sự cám dỗ và chịu đựng cảm giác thiếu cảm xúc đối với bạn trai của mình. Phải cần một ý chí to lớn để làm được những gì cô ấy đã làm, cuối cùng khiến cô ấy suy sụp đến mức bật khóc. Những trường hợp như vậy rất hiếm, nhưng hãy nhìn nhận nó một cách logic: hoặc là có một chỗ dựa tinh thần hoặc khoái lạc thực sự trong porn, hoặc là không. Nếu có, ai muốn chờ một giờ, một ngày, hoặc thậm chí một tuần? Tại sao bạn lại phải cảm thấy "thiếu" chỗ dựa tinh thần hoặc khoái lạc trong thời gian chờ đợi? Nếu không có chỗ dựa tinh thần hay khoái lạc thực sự, tại sao phải bận tâm truy cập hậu cung ảo của bạn?</p>
+<p>Đây là một trường hợp khác về một người đàn ông "bốn ngày một lần", mô tả cuộc sống của anh ấy như sau:</p>
+<blockquote>
+<p>"<em>Tôi bốn mươi tuổi và mắc PIED (rối loạn cương dương do porn gây ra) với phụ nữ thật và ngay cả khi xem porn, điều mà tôi làm hầu hết thời gian. Đã một thời gian rồi tôi không có được sự cương cứng hoàn toàn. Trước khi thực hiện chế độ ăn kiêng porn bốn ngày một lần, tôi thường ngủ ngon giấc suốt đêm sau lần xem porn của mình. Bây giờ tôi hay tỉnh giấc sau mỗi giờ trong đêm và đó là tất cả những gì tôi có thể nghĩ đến. Ngay cả khi ngủ, tôi cũng mơ về những clip yêu thích của mình. Vào những ngày sau lần xem porn theo lịch trình của mình, tôi cảm thấy khá chán nản, chế độ ăn kiêng chiếm hết năng lượng của tôi. Vợ tôi sẽ để tôi một mình vì tôi quá khó tính, và nếu cô ấy không thể rời đi, cô ấy sẽ không muốn tôi ở trong nhà. Tôi đi chạy bộ bên ngoài nhưng tâm trí tôi bị ám ảnh bởi porn.</em></p>
+<p><em>Vào ngày đã lên lịch, tôi bắt đầu lên kế hoạch sớm hơn vào buổi tối, trở nên rất khó chịu nếu có điều gì đó xảy ra trái với kế hoạch của tôi. Tôi sẽ rút lui khỏi các cuộc trò chuyện và nhượng bộ (chỉ để sau đó hối hận) ở cơ quan và ở nhà. Tôi không phải là một người thích tranh cãi, nhưng tôi không muốn chủ đề hoặc cuộc trò chuyện nào đó kìm hãm mình. Tôi nhớ những lần tôi gây gổ vô cớ với vợ. Tôi đợi đến mười giờ và khi đến giờ, tay tôi run rẩy không kiểm soát được, không muốn bắt đầu xem porn ngay lập tức và bắt đầu 'đi dạo quanh'. Tâm trí mách bảo rằng bản thân phải "nhịn đói" trong bốn ngày nên xứng đáng có một clip 'đặc biệt'. Cuối cùng, tôi chọn một hoặc hai clip, nhưng muốn nó kéo dài để tôi có thể 'sống sót' qua bốn ngày tiếp theo, vì vậy tôi dành nhiều thời gian hơn để kết thúc xem porn.</em>"</p>
+</blockquote>
+<p>Ngoài những rắc rối khác, người đàn ông đáng thương này không hề biết rằng anh ta đang tự đầu độc mình. Đầu tiên, anh ta đang phải chịu đựng 'hội chứng trái cấm', và sau đó ép bộ não của mình xả dopamine. So sánh mà nói, các thụ thể dopamine của anh ta không bị suy giảm nhiều như vậy, nhưng anh ta lại đang tự bôi trơn máng trượt nước porn, mải miết kiếm tìm, lùng sục sự kích thích tột độ (edging), cảm giác mới lạ, sự đa dạng, yếu tố gây sốc và rồi lại chìm trong lo lắng để sống sót qua bốn ngày tiếp theo. Có lẽ bạn đang nghĩ người đàn ông này là một thằng thảm hại, nhưng không hề. Ông ta là một cựu vận động viên và trung sĩ hải quân. Dù đã không muốn mình bị nghiện bất cứ thứ gì, nhưng sau khi trở về từ chiến tranh, ông đã được đào tạo thành kỹ thuật viên IT trong một chương trình phục hồi chức năng dành cho cựu chiến binh.</p>
+<p>Khi bước vào lực lượng lao động dân sự, anh ấy là một chuyên gia IT được trả lương cao trong một ngân hàng, và được cấp một chiếc máy tính xách tay mang về nhà. Đó là năm mà những người nổi tiếng trong giới thượng lưu 'làm rò rỉ' video porn của họ lên mạng và có rất nhiều bàn tán xung quanh nó. Sau đó, anh ấy bị nghiện, dành cả quãng đời còn lại tự hủy hoại bản thân về thể xác lẫn tinh thần. Nếu anh ta là một con vật, xã hội có lẽ đã giải thoát anh ta khỏi đau khổ từ lâu rồi, nhưng chúng ta vẫn cho phép những thanh thiếu niên trẻ tuổi khỏe mạnh về tinh thần và thể chất trở nên nghiện ngập. Bạn có thể nghĩ rằng những trường hợp kiểu như này là phóng đại, hãy thử nhìn vào trường hợp này — dù cực đoan — nhưng không hề hiếm gặp. Có hàng chục nghìn câu chuyện tương tự. Bạn có dám chắc là không ai trong đám bạn bè, người quen của người đàn ông đó ước được cái kiểu "bốn ngày một lần" không? Nếu bạn nghĩ chuyện đó không đến lượt mình (chắc porn nó chừa mình ra), thì bớt ảo tưởng đi.</p>
+<p><strong>NÓ ĐÃ VÀ ĐANG XẢY RA RỒI.</strong></p>
+<p>Giống như bao con nghiện khác, người nghiện porn là những kẻ dối trá, thậm chí với chính bản thân mình. Họ buộc phải thế. Hầu hết những người nghiện "cho vui" đều tự cho phép bản thân xem nhiều lần hơn và trong nhiều dịp hơn mức họ thừa nhận. Nhiều cuộc trò chuyện với những người tự nhận mình dùng "hai lần một tuần" sẽ cho thấy họ đã "tự xử" ba bốn lần trong tuần đó là chuyện thường. Đọc các câu chuyện trên Reddit, NoFap và các diễn đàn dừng xem porn từ những người nghiện "thường thường", bạn sẽ thấy họ hoặc là đếm từng ngày [dừng xem porn] hoặc là chờ đợi để thất bại. Bạn không cần phải ghen tị với những người nghiện "cho vui" này, và bạn cũng không cần phải xem porn, cuộc sống không có nó tươi đẹp hơn vạn lần. Hãy xem nhật ký sau đây:</p>
+<p>"Chuyện bắt đầu từ một thử thách đơn giản là không được "tự sướng" một ngày, và tôi không thể làm nổi. Giờ tôi không còn nghĩ về thủ dâm nữa. Bạn hoàn toàn có thể làm được."</p>
+<p>Thanh thiếu niên thường khó dừng xem porn hơn, không phải vì họ thấy việc dừng lại khó hơn, mà vì họ không tin mình bị nghiện hoặc chỉ mới ở giai đoạn đầu của cái bẫy, thường mắc phải ảo tưởng rằng họ sẽ tự động dừng lại được trước khi bước sang giai đoạn hai.</p>
+<p>Các bậc cha mẹ có con cái ghê tởm porn không nên ảo tưởng về sự an toàn. Tất cả trẻ em đều ghét cay ghét đắng những mặt tối của porn trước khi bị nghiện. Đã từng có lúc, bạn cũng vậy. Đừng để bị đánh lừa bởi những chiến dịch hù dọa, cái bẫy vẫn y nguyên như xưa. Trẻ em biết porn là chất kích thích siêu độ, nhưng chúng cũng tin rằng chỉ "ghé thăm" hay liếc qua một lần thì sẽ không sao. Đến một giai đoạn nào đó, chúng có thể bị ảnh hưởng bởi partner, bạn học hoặc đồng nghiệp.</p>
+<p>Xin đừng chủ quan về vấn đề này. Xã hội thất bại trong việc ngăn chặn thanh thiếu niên nghiện porn và các chất gây nghiện khác có lẽ là khía cạnh đáng báo động nhất của tệ nạn nghiện ngập này. Bộ não của thanh thiếu niên dễ uốn nắn hơn đáng kể, và việc giáo dục và bảo vệ chúng là vô cùng cần thiết. Nếu bạn không chắc nên bắt đầu từ đâu, những nguồn tài liệu tốt bao gồm cuốn sách YourBrainOnPorn.com để tự trang bị kiến thức về khoa học thần kinh. Ngay cả khi bạn nghi ngờ con mình có thể đã nghiện, cuốn sách (trên YourBrainOnPorn.com) vẫn cung cấp nền tảng kiến thức để giúp ai đó thoát khỏi [nghiện ngập]. Nếu không, hãy giới thiệu cuốn sách này.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="13.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="15.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="13.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="15.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

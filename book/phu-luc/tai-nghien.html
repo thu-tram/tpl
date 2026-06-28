@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Tái nghiện - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="tái-nghiện"><a class="header" href="#tái-nghiện">Tái nghiện</a></h1>
+<p>Ngoài lý do không làm theo hướng dẫn hoặc hiểu sai phương pháp, bài viết này sẽ chỉ ra một điều mà gần đây tôi mới nhận ra là nguyên nhân chính khiến bạn vẫn còn tái nghiện (và cũng là lý do tôi từng tái nghiện nhiều lần trước đây). Bài viết sẽ không giới thiệu thêm bất kỳ tài liệu hay cuốn sách nào khác. Tôi tin rằng cuốn <strong>Hackbook</strong> là tất cả những gì bạn cần để thoát khỏi porn. (Tuy vậy, vẫn có một số tài liệu hữu ích để bạn hiểu sâu hơn về phương pháp và làm theo hướng dẫn dễ hơn – ví dụ như <em>Meditations of a Porn Addict</em> trong trang tài nguyên cuốn EasyPeasy – nhưng dù sao thì chỉ riêng Hackbook cũng đã đủ rồi).</p>
+<p><em>P.S. Nếu điều này khiến ai đó cảm thấy bị xúc phạm, thì xin lỗi – tôi hoàn toàn không có ý đó.</em></p>
+<p>Ảo thật đấy.</p>
+<p>Phương pháp Easyway của Allen Carr đã giúp hàng triệu người bỏ thuốc lá một cách nhẹ nhàng. Phương pháp ấy còn được ứng dụng thành công với đủ loại nghiện khác: rượu, công nghệ, vape, ăn uống quá độ, thậm chí cả những vấn đề không phải nghiện như sợ bay hay chánh niệm. Tính đến nay, Easyway đã cứu hơn 50 triệu người ở hơn 50 quốc gia khỏi đủ kiểu nghiện ngập. Không thể nghi ngờ gì – đây là một phương pháp cực kỳ thành công, và thực sự có thể hiệu quả với bất kỳ ai. Nếu bạn nghĩ mình là trường hợp đặc biệt mà phương pháp này không hiệu nghiệm, có thể là bạn đang tự lừa mình đấy.</p>
+<p>Tất nhiên, bạn sẽ kiểm tra danh sách các cuốn sách của Allen Carr và John Dicey (đồng tác giả mới) và nhận ra không có cuốn nào tên là “Easyway để thoát porn”. Và đó là lý do Hackauthor và Hackauthor2 đã viết cuốn này – một cách áp dụng Easyway cực kỳ rõ ràng và mạch lạc vào cái bẫy porn.</p>
+<p>Nếu bạn còn nghi ngờ về việc phương pháp này có thể áp dụng cho porn hay không, thì trong <em>Easyway to Mindfulness</em>, chương về nghiện có nói rõ rằng Easyway hoàn toàn có thể áp dụng để thoát khỏi nghiện porn. Và bạn biết rõ cuốn Hackbook này đã giúp rất nhiều người thoát PMO.</p>
+<p>Vậy câu hỏi duy nhất còn lại – và đây mới là điều “kỳ cục” – là: nếu phương pháp này đã rõ ràng và thành công đến thế, thì tại sao bạn vẫn chưa thoát được? Tại sao bạn vẫn tiếp tục tái nghiện dù đã đọc sách một, hai, hay thậm chí mười lần? Thậm chí bạn có thể đã thử cả phương pháp AVRT – một phương pháp khác cũng cực kỳ hiệu quả giúp người ta thoát nghiện. Trên website chính thức của AVRT, Jack Trimpey còn nói: “Tại đây có đủ thông tin để bạn hồi phục hoàn toàn khỏi bất kỳ dạng nghiện nào: rượu, ma túy, tình dục, <strong>nghiện porn</strong>, ăn uống quá độ, nghiện máy tính, cờ bạc... hay bất kỳ hành vi cá nhân nào khác mà bạn biết rõ là không tốt cho mình nhưng vẫn không cưỡng lại được (<a href="https://web.archive.org/web/20190409022742/https://rational.org/index.php?id=1">Nguồn đây</a>).</p>
+<p>Cả Easyway lẫn AVRT đều có thể giúp bạn thoát nghiện porn một cách dễ dàng. Vậy thì điều gì khiến bạn và nhiều người khác vẫn loay hoay, dù đã đọc Hackbook – một cuốn sách đã cứu được hàng ngàn người khác khỏi cơn nghiện quái ác? Chẳng lẽ một phương pháp được gọi là “dễ dàng” lại khó với bạn đến vậy?</p>
+<p>Được rồi, hãy xem Hackbook đã giúp gì cho bạn – và vì sao Easyway có thể giúp người ta thoát khỏi mọi dạng nghiện, rồi sau đó mình sẽ nói về những thứ mà bạn đang làm sai:</p>
+<ol>
+<li>Nó gỡ bỏ sự tẩy não. Nó chỉ ra rằng: thoát ra khỏi cơn nghiện rất dễ và không phải hy sinh bất cứ thứ gì. <em>Dùng</em> thì chẳng có lợi gì, còn bỏ thì được lợi đủ đường. Sau khi đọc, bạn lẽ ra phải thấy điều này là hiển nhiên.</li>
+<li>Khi đã tin rằng thoát khỏi nó rất dễ, bạn sẽ không còn sợ thất bại hay nghi ngờ về việc mình đã thực sự bỏ – vì rõ ràng bạn thấy nó dễ đến mức chẳng lý do gì để quay lại. Bạn nhận ra: "cơn đau cai nghiện” gần như không tồn tại, và "giai đoạn thoát nghiện" sẽ trở thành một lời nhắc nhở rằng thật tuyệt khi được tự do. Cái gọi là cảm giác “vật vã” mà bạn đã phải trải qua chỉ là cảm giác tâm lý do nỗi sợ tạo ra mà thôi, chứ không phải triệu chứng vật lý thật sự.</li>
+<li>Khi bạn nhận ra việc bỏ không khiến bạn mất mát gì, và dùng thì thật ra chẳng mang lại khoái lạc thật sự nào – bạn không còn <em>sợ thành công</em>, không còn cảm giác thiếu thốn. Bạn sẽ không còn ủ rũ hay thèm khát nữa, vì bạn biết – chẳng có gì đáng để tiếc cả.</li>
+</ol>
+<p>Và nếu bạn học được cách nhận diện “AV” (Addictive Voice – Tiếng nói nghiện ngập trong đầu bạn), thì bạn sẽ dễ dàng hóa giải con tiểu quỷ ấy – nó không còn có thể nhồi nhét sợ hãi, nghi ngờ hay cảm giác hy sinh vào đầu bạn nữa.</p>
+<p>Nói đơn giản: lý do duy nhất khiến bạn vẫn còn cảm giác sợ, nghi ngờ, hay tiếc nuối – là vì bạn <strong>hiểu sai</strong> sách và/hoặc <strong>không làm đúng theo hướng dẫn</strong>. Nhưng điều này chỉ có thể biện minh khi bạn mới đọc lần đầu. Đọc lại vài lần rồi, lại xem thêm bài viết chia sẻ từ người khác rồi – mà vẫn bảo rằng chưa hiểu hay chưa làm đúng? Phương pháp thì rõ ràng, hướng dẫn cũng không hề phức tạp – vậy tại sao vẫn chưa thông?</p>
+<p>Câu trả lời là: bạn đang làm một việc gì đó khiến bạn <strong>bị tẩy não trở lại</strong>, <strong>nuôi dưỡng tiếng nói nghiện ngập (giọng nghiện)</strong>, và <strong>gây ra sợ hãi, nghi ngờ, cảm giác thiếu thốn</strong> – nói cách khác, bạn đang tự tay phá hỏng tất cả những gì Hackbook đã làm được cho bạn.</p>
+<p>Cái việc tai hại đó là gì?</p>
+<p><strong>Bạn tự đưa mình vào một môi trường khiến bạn tin rằng việc dừng lại sẽ rất KHÓ.</strong></p>
+<p>Ý tôi là: bạn vẫn còn quanh quẩn trên subreddit này (ý đang nói r/pmohackbook trên Reddit), hay các cộng đồng EasyPeasy, hoặc mấy hội nhóm NoFap hoặc bất kỳ nơi nào có hiệu ứng tiêu cực mà tôi sắp nói tới.</p>
+<p>Đừng hiểu sai. Subreddit này cũng có không ít điều hay. Nó <strong>có thể</strong> giúp bạn hiểu sách hơn, chỉ ra điều bạn chưa làm đúng. Và tôi cũng nói rõ: <strong>người bị tẩy não không có lỗi</strong>, và <strong>bạn cũng không có lỗi nếu bạn thấy rối và cần tìm hướng đi</strong>. Cộng đồng này <strong>có thể</strong> là nơi để ăn mừng tự do, chia sẻ kinh nghiệm giúp nhau thoát nghiện. Hoặc thi thoảng, nếu người mới có thắc mắc về bấtwhe cứ thứ gì thì chúng ta có thể giúp họ. Nhưng thực tế, subreddit này (và cả Discord nữa) lại KHÔNG thực sự phục vụ những mục đích đó.</p>
+<p>Bạn sẽ không thấy nhiều bài viết chia sẻ niềm vui tự do đâu. Bạn chủ yếu thấy gì? Toàn là bài viết “lại tạch chuỗi rồi”, “lại thất bại rồi”. Bạn thấy vài người không tin vào Hackbook, cãi lý rằng porn thật ra cũng có khoái lạc và bạn cũng có thể đã thấy vài người đưa ra các lời khuyên kiểu NoFap.  Tất cả những điều này khiến bạn cảm thấy lúng túng, rồi lại khiến bạn tin rằng việc dừng xem porn lại không hề dễ dàng (vì nếu dễ vậy thì tại sao người ta vẫn cứ tạch vậy?), rồi bạn sẽ bắt đầu tin rằng mình đang bỏ lỡ điều gì đó khi mọi người bảo rằng cuốn Hackbook này sai rồi và porn thực sự là một niềm vui (kể cả khi cãi lại mấy người đó thì chỉ cần thấy mấy câu "phát ngôn" của họ cũng đủ làm bạn thấy dao động)</p>
+<p>Có một số cô chú bé đần vẫn không xóa bỏ được cái lớp tẩy não rằng porn là một niềm vui. Vậy thì tại sao lại có nhiều bài viết về tái nghiện hoặc thất bại như thế nếu <em>việc dừng xem porn lại</em> thực ra rất dễ?</p>
+<ol>
+<li>Chỉ cần MỘT bài viết “tôi vừa tái nghiện” – dù người đó có thể đã không tuân theo hướng dẫn – là đủ gieo nghi ngờ trong lòng người đọc. Người đọc đó sau khi nghi ngờ, cũng tái nghiện. Rồi họ cũng đăng bài “tôi lại thất bại”. Và thế là vòng lặp bắt đầu. Một bài viết gây ra nghi ngờ cho vài người, vài người đó lại tái nghiện và viết tiếp...</li>
+</ol>
+<p>Bạn đọc nhiều bài viết như vậy rồi cảm thấy lo lắng, nghi ngờ, bối rối. “Rõ ràng là có người thất bại – có khi phương pháp này không dễ như nó nói?”, “Có khi mình cũng đang làm gì đó sai?”, “Toàn thấy người thất bại – vậy dễ cái gì?”. Và thế là bạn <strong>bị tẩy não lại</strong> – chỉ vì đọc những bài viết từ những người... cũng bị tẩy não vì đã đọc bài viết thất bại trước đó! Có người còn bị thuyết phục rằng bỏ bằng EasyPeasy là bất khả thi, và đi quay lại dùng NoFap kiểu “dùng ý chí” – vốn chỉ làm mọi thứ khó khăn hơn.
+2.  Bạn biết rồi đấy – Hackbook này đã giúp vô số người dừng xem porn. Và bạn đoán xem những người ấy làm gì sau khi thoát porn được? Họ đi tiếp thôi. Họ rời khỏi cộng đồng, và điều đó giúp họ càng thoát hẳn. Vì họ không còn bị tiếp xúc với mấy bài viết như thể mật ngọt cho con tiểu quỷ nữa – những nội dung khiến họ cảm thấy thiếu thốn, nghi ngờ hay sợ hãi. Bạn đọc thứ gì thường xuyên thì dần dần bạn sẽ tin vào nó, dù nó sai. Vì vậy, bạn thấy toàn bài viết tái nghiện là vì <strong>những người thành công thì đi rồi</strong>, còn <strong>những người ở lại chính là những người vẫn còn đang vật lộn</strong>. Họ ở lại vì chưa tự do được, và việc ở lại lại càng khiến họ khó thoát hơn. Nghĩ lại thì cũng khá ảo thật.</p>
+<p><strong>Cho nên (xin lỗi nếu nói hơi thẳng – mình chỉ cảm thấy sẽ có nhiều người được tự do hơn nếu họ chịu nghe lời khuyên này): Việc tiếp tục tham gia vào cộng đồng này, về cơ bản, sẽ dẫn đến những điều sau:</strong></p>
+<ol>
+<li>Nó khiến bạn bị “tẩy não ngược” lần nữa. Nó gieo vào đầu bạn suy nghĩ rằng “chắc việc này khó lắm”, bởi nếu không thì tại sao bạn lại từng tái nghiện? Và nếu dễ thật thì tại sao người khác vẫn còn tái nghiện? Khi bạn liên tục đọc những bài viết kiểu đó, bạn khó mà giữ được sự tin tưởng tuyệt đối vào việc mình đã dừng hẳn, bởi vì dần dần bạn sẽ bắt đầu tin rằng việc thoát khỏi porn là một chuyện gian nan, thậm chí có cái gì đó giống như đang “hy sinh” vậy.</li>
+<li>Một khi bạn đã tin rằng việc dừng xem porn là khó, thì bạn sẽ bắt đầu sợ thất bại. Bạn không còn tin rằng mình có thể ngưng hoàn toàn suốt đời nữa. Bạn bắt đầu thấy mấy cái cảm giác thèm xem là thứ khó vượt qua.</li>
+<li>Và rồi khi bạn tiếp xúc với những bài viết nói rằng bỏ porn khó, rằng bạn đang “từ bỏ một điều gì đó”, rằng phương pháp không hiệu quả v.v... thì “con đại quỷ” trong đầu bạn sẽ có thêm đạn dược để chống lại bạn. Cuối cùng, bạn sẽ đi đến kết luận nghe có vẻ hợp lý – nhưng hoàn toàn sai – rằng mấy điều trong các bài viết đó là thật.</li>
+</ol>
+<p><strong>Lặp lại lần nữa: những người đăng bài kiểu “lỡ tay xem lại” không có lỗi.</strong></p>
+<p>Nhưng nói cho gọn, mình tin rằng khi bạn cứ ở lại subreddit này, hoặc bất kỳ nơi nào gieo cho bạn cảm giác tương tự, thì bạn gần như không thể tránh khỏi bị "thèm", bị "quỷ" trỗi dậy, bị nghi ngờ, sợ hãi và hoài nghi bản thân. Chỉ cần đọc một bài viết “lỡ tái nghiện” thôi là bạn có thể bị ảnh hưởng, rồi lại viết bài kiểu đó, kéo người khác tái nghiện theo. Tóm lại, lý do khiến bạn cảm thấy khó dừng porn là vì bạn tiếp xúc với những bài viết khiến bạn <strong>tin sai</strong> rằng việc này khó. Thật tiếc, nhưng cộng đồng này, cùng với các nhóm như easypeasy, nofap, pornfree... đều đang <strong>phản tác dụng với hackbook</strong>. Cá nhân mình, khi quyết tâm dừng hẳn, mình đã rời khỏi Reddit một thời gian – và điều đó giúp mình rất nhiều.</p>
+<p>Nên, đúng vậy. Dù subreddit này đôi lúc có ích, nhưng mình nghĩ nó gây hại nhiều hơn lợi. Nếu bạn thấy khó hiểu điều gì, hãy đọc lại hackbook và các tài nguyên kèm theo. Tin vui là: <strong>bỏ porn cực kỳ dễ dàng và không đau đớn gì cả</strong>, trừ khi bạn:</p>
+<p>A) Chưa hiểu cuốn sách nói gì<br />
+B) Không làm đúng hướng dẫn<br />
+C) Vẫn dính vào những thứ khiến bạn bị “tẩy não lại” và khiến bạn mất niềm tin vào chính mình.</p>
+<p>Không ai có lỗi vì subreddit này gây ảnh hưởng tiêu cực, nhưng <strong>nếu bạn vẫn tiếp tục tiếp xúc với những thứ khiến bạn nghi ngờ, lo sợ, và than thân trách phận – thì đó là lỗi của bạn.</strong></p>
+<p>Dù sao thì, mình hi vọng bài viết này giúp ích được cho bạn. Cá nhân mình sắp rời Reddit hoàn toàn, vì mình không còn thấy nó có ích gì cho mình nữa – chỉ thấy tốn thời gian thôi. Mình không nói bạn phải rời Reddit hay mạng xã hội, nhưng mình khuyên bạn nên <strong>cẩn thận với những gì bạn đọc</strong>, bao gồm cả việc tránh xa những cộng đồng khiến bạn sa sút. Xin lỗi nếu có ai cảm thấy bị xúc phạm vì bài viết này. Mình không có ý công kích cộng đồng đâu. Mình chỉ vừa nhận ra một điều: <strong>đây chính là lý do khiến người ta tái nghiện</strong>, và biết được điều đó thật sự có thể giúp bạn thoát ra.</p>
+<p>Rốt cuộc, lý do bạn thất bại là vì bạn vẫn còn nghi ngờ, vẫn còn sợ hãi, vẫn còn u uất. Câu hỏi duy nhất là: <strong>điều gì đang khiến bạn có lối suy nghĩ tiêu cực đó?</strong> Và mình tin rằng, <strong>đây chính là câu trả lời.</strong> Mọi thứ trở nên hợp lý một cách rõ ràng: <strong>ở lại trong cộng đồng kiểu này chỉ khiến bạn khó thành công hơn mà thôi.</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../33.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../phu-luc/doi-pho-voi-noi-so.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../33.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../phu-luc/doi-pho-voi-noi-so.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

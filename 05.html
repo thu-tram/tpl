@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sự tẩy não - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="sự-tẩy-não"><a class="header" href="#sự-tẩy-não">Sự tẩy não</a></h1>
+<p>Đây là lý do thứ hai khiến chúng ta bắt đầu tiêu thụ porn. Để hiểu rõ hơn về sự tẩy não này, chúng ta cần nghiên cứu kỹ về hiệu ứng mạnh mẽ của kích thích siêu thường (supernormal stimulus). Não bộ của chúng ta chưa tiến hóa kịp để đối phó với hậu cung ảo, nơi chúng ta có thể lướt qua vô số "bạn tình tiềm năng" chỉ trong 15 phút, điều mà tổ tiên ta mất cả đời cũng chẳng thể có được.</p>
+<p>Trong quá khứ đã có rất nhiều lời khuyên sai lầm. Ví dụ như quan niệm hoang đường rằng thủ dâm gây mù lòa. Điều này, cùng với các chiến thuật gây sợ hãi khác, rõ ràng đã đi quá đà. Những quan niệm sai lầm như vậy đã được khoa học bác bỏ. Nhưng cùng với việc bác bỏ những điều sai, chúng ta lại vô tình bỏ qua những điều đúng đắn. Ngay từ nhỏ, tiềm thức non nớt của chúng ta đã bị oanh tạc bởi vô vàn thông điệp và hình ảnh gợi dục, từ tạp chí, quảng cáo cho đến video ca nhạc, dù công khai hay kín đáo. Một số video âm nhạc cũng rất gợi cảm, nhưng đừng tuyệt vọng, hãy biến nó thành một trò chơi để xác định những yếu tố chúng đang sử dụng là gì - liệu đó là giá trị gây sốc (shock value), tính mới lạ, màu sắc, kích thước, những điều cấm kị, cảm giác hoài niệm, v.v. Trò chơi này thậm chí có thể được dạy cho trẻ vị thành niên như một cách giáo dục chúng.</p>
+<p>Cốt lõi của thông điệp mà porn liên tục nhồi vào đầu ta là: “Điều quý giá nhất trên đời này, điều cuối cùng mình nghĩ đến và khao khát làm – chính là đạt cực khoái.” Nghe có vẻ hơi quá không? Nhưng thử để ý mà xem — hầu như phim ảnh, truyền hình nào cũng trộn lẫn giữa cảm xúc (như sự đụng chạm, mùi hương, giọng nói) với khát vọng đạt cực khoái. Não ý thức của ta có thể không nhận ra ngay, nhưng tiềm thức thì vẫn âm thầm ghi nhận tất cả.</p>
+<h2 id="lý-giải-khoa-học"><a class="header" href="#lý-giải-khoa-học">Lý giải khoa học</a></h2>
+<p>Ngược lại, cũng có những chiêu trò khác dọa dẫm người nghiện: nào là rối loạn chức năng sinh lý, nào là mất động lực, cuồng gái ảo hơn gái thật, rồi thì YourBrainOnPorn.com và vô số cộng đồng mạng khác... Nhưng tất cả những chiến dịch này đều vô dụng bởi chẳng thể khiến người ta ngừng xem porn. Về mặt logic thì nên là vậy nhưng thực tế thì ngược lại. Ngay cả những rủi ro sức khỏe được liệt kê từ các bình duyệt khoa học (peer-reviewed studies) trên YourBrainOnPorn.com cũng không đủ mạnh để có thể ngăn một thiếu niên bắt đầu xem porn.</p>
+<p>Trớ trêu thay, nguồn lực mạnh mẽ nhất trong cơn hỗn độn này lại chính là từ bản thân người nghiện. Thật sai lầm khi cho rằng người nghiện yếu đuối và có ý chí kém cỏi. Bạn cần phải mạnh mẽ về thể chất để đối phó với chứng nghiện sau khi biết nó tồn tại. Có lẽ khía cạnh đau đớn nhất là họ tự coi mình là những người thất bại, kẻ thua cuộc và khó gần. Trong khi nếu họ không tự hạ thấp bản thân chỉ vì sự nghiện porn của bản thân, rất có thể họ đã là một người bạn thú vị và dễ mến hơn ở ngoài đời.</p>
+<p><img src="images/trap.png" alt="The Pornography Trap" /></p>
+<h3 id="vấn-đề-sử-dụng-ý-chí"><a class="header" href="#vấn-đề-sử-dụng-ý-chí">Vấn đề sử dụng ý chí</a></h3>
+<p>Những người cố thoát khỏi porn bằng cách “gồng ý chí” thường quay sang trách bản thân là thiếu nghị lực, rồi tự phá nát sự bình yên và niềm vui trong cuộc sống của mình. Việc không kiểm soát được bản thân đã khó, nhưng việc vì thế mà ghét bỏ chính mình thì còn tệ hơn gấp bội. Chúng ta đang đối mặt với một cơn nghiện, không phải chỉ là một thói quen vặt. Khi ai đó nghiện chơi golf, họ đâu có ngồi tranh cãi nội tâm kiểu “Phải ngừng chơi mới được”. Nhưng tại sao bạn lại bào chữa cho cơn nghiện Porn?</p>
+<p>Tiếp xúc liên tục với những kích thích siêu thường sẽ thiết lập lại bộ não của bạn. Vì vậy, việc xây dựng khả năng chống lại sự tẩy não này là rất quan trọng.</p>
+<p>Đừng tự lừa mình bằng cái trò “xem porn lành mạnh” – chính con tiểu quỷ trong bạn bày ra cái trò đó để dụ bạn quay lại. Có ai kiểm định đâu mà bảo “porn nghiệp dư” thì an toàn? Mấy trang web porn thu thập dữ liệu người nghiện, rồi dùng chính dữ liệu đó để nhắm đúng thị hiếu. Thể loại nào đang lên trend là ngay lập tức được <em>bắt trend</em>. Đừng để bị lừa bởi cái mác "giáo dục giới tính" hay mấy clip được quảng cáo là "dành cho nữ giới". Thay vì viện cớ, hãy bắt đầu tự hỏi mình: <em>"Tại sao mình lại xem porn? Mình có thực sự cần phải xem porn không?"</em></p>
+<p><strong>Không, tất nhiên là không rồi.</strong></p>
+<p>Hầu hết người nghiện thề rằng họ chỉ xem porn tĩnh (static porn) và porn hạng nhẹ (soft porn) nên không vấn đề gì. Trong khi trên thực tế, họ đang phải gồng mình và chiến đấu bằng ý chí của bản thân để chống lại những cám dỗ. Nếu thực hiện quá thường xuyên và quá lâu sẽ khiến ý chí của họ bị kiệt quệ, dẫn đến những thất bại trong các khía cạnh khác của cuộc sống nơi mà ý chí đóng một vai trò quan trọng như tập thể dục, ăn kiêng, v.v. Những thất bại đó khiến họ cảm thấy đau khổ và tội lỗi, để rồi lại ngựa quen đường cũ. Nếu không làm vậy thì họ cũng sẽ trút cơn giận đó lên những người thân yêu.</p>
+<p>Một khi đã nghiện porn, sự tẩy não càng trở nên nghiêm trọng. Tiềm thức mách bảo bạn phải "nuôi" con tiểu quỷ đó, và nó chi phối mọi suy nghĩ của bạn. Chính nỗi sợ hãi ngăn cản người ta dừng xem porn, nỗi sợ cái cảm giác trống rỗng và bất an khi họ ngừng "bơm" dopamine cho não. Việc bạn không nhận ra nó không đồng nghĩa với việc nó không hề tồn tại.</p>
+<h3 id="sự-thụ-động"><a class="header" href="#sự-thụ-động">Sự thụ động</a></h3>
+<p>Chính sự thụ động trong tư duy và thói quen lệ thuộc vào người khác mới là rào cản lớn nhất khiến việc thoát khỏi porn trở nên khó khăn. Cách chúng ta được nuôi dạy, kết hợp với sự tẩy não do chính cơn nghiện gây ra, lại còn được củng cố thêm bởi những người xung quanh – bạn bè, người thân, đồng nghiệp – đã tạo nên một bức tường rất dày. Cụm từ "từ bỏ" là một ví dụ điển hình của sự tẩy não, nó ám chỉ rằng chúng ta phải hy sinh một điều gì đó vô cùng giá trị. Nhưng sự thật là: bạn chẳng mất gì cả. Ngược lại, bạn đang tự giải thoát bản thân khỏi một căn bệnh quái ác và nhận về vô số lợi ích tích cực. Chúng ta sẽ bắt đầu loại bỏ sự tẩy não này ngay bây giờ, sẽ không còn là 'từ bỏ' nữa, mà là dừng xem porn lại, hay đúng hơn là, <strong>thoát khỏi</strong> cơn nghiện quái ác đấy.</p>
+<p>Thứ duy nhất khiến ta bắt đầu xem Porn là do những người khác cũng xem, điều này khiến ta cảm thấy như bản thân đang bỏ lỡ điều gì. Ta cố để nghiện nhưng để rồi chẳng thấy được bản thân đã bỏ lỡ điều gì. Mỗi khi xem thêm một clip, ta lại được trấn an rằng phải có cái gì trong đó, nếu không mọi người sẽ không xem và mảng kinh doanh về Porn sẽ không lớn đến vậy. Kể cả khi đã dừng xem porn, người cai được một thời gian cảm thấy họ cảm thấy "thiếu" khi cuộc thảo luận về một nghệ sĩ giải trí gợi cảm, ca sĩ hoặc thậm chí là một ngôi sao porn xuất hiện trong một cuộc chém gió bất kì.</p>
+<p>Và rồi họ cảm thấy an toàn, họ tự nhủ sẽ xem một lần tối nay và trước khi họ biết điều đó, thì họ đã bị mắc kẹt vào cạm bẫy porn một lần nữa rồi.</p>
+<p>Để rồi cảm giác an toàn đấy khiến họ tự trấn an bản thân rằng <em>chỉ xem một lần thôi</em>. Trước khi họ nhận thức được chuyện gì đã xảy ra thì họ đã bị mắc kẹt vào cái bẫy Porn một lần nữa rồi.</p>
+<p>Sự tẩy não là quá lớn và bạn cần phải nhận thức được tác hại của nó. Công nghệ càng phát triển và số lượng trang phim đen và tốc độ sẽ càng được tăng theo cấp số nhân. Ngành công nghiệp porn đang đầu tư hàng triệu đô vào công nghệ thực tế ảo để nó trở thành con át chủ bài tiếp theo. Chúng ta không biết mình đang đi đâu, chưa được chuẩn bị đầy đủ để đối phó với những gì đã, đang và sẽ xảy ra.</p>
+<p>Chúng ta sắp bắt đầu gỡ bỏ lớp tẩy não này. Người không xem porn chẳng hề bị <em>thiệt thòi</em> gì cả — chính người đang dính vào nó mới là người đang đánh đổi cả một đời những điều quý giá như:</p>
+<ul>
+<li>Sức khỏe</li>
+<li>Sinh lực</li>
+<li>Tiền bạc</li>
+<li>Sự an yên trong tâm trí</li>
+<li>Sự tự tin</li>
+<li>Lòng can đảm</li>
+<li>Tự trọng</li>
+<li>Hạnh phúc</li>
+<li>Và trên hết: <strong>SỰ TỰ DO</strong>.</li>
+</ul>
+<p>Người nghiện thu được gì từ những hy sinh lớn lao này? <strong>CHẢNG GÌ CẢ</strong>, ngoài cái ảo tưởng cố gắng tìm lại cảm giác bình yên và tự tin mà người không nghiện vẫn luôn tận hưởng.</p>
+<h2 id="cơn-đau-cai-nghiện"><a class="header" href="#cơn-đau-cai-nghiện">Cơn đau cai nghiện</a></h2>
+<p>Như đã giải thích trước đó, người nghiện tin rằng họ tiêu thụ porn để thưởng thức, thư giãn hoặc để giáo dục giới tính. Lý do thực tế là để giảm bớt căng thẳng khi cơn thiếu thốn ập đến. Tiềm thức của chúng ta tin rằng porn và thủ dâm tại một số thời điểm nhất định có xu hướng mang lại khoái cảm. Khi chúng ta ngày càng bị cuốn vào nó, nhu cầu giải tỏa cơn thèm ngày càng lớn và cái bẫy tinh vi ấy lại càng kéo bạn xuống. Quá trình này diễn ra chậm đến mức bạn khó có thể nhận ra, hầu hết những người trẻ không nhận ra họ bị nghiện cho đến khi cố gắng dừng xem porn lại và thậm chí, nhiều người sẽ không thừa nhận rằng họ đã bị nghiện.</p>
+<p>Như đã nêu, người nghiện có xu hướng giải tỏa cơn thèm của họ vào những thời điểm căng thẳng, buồn chán, tập trung hoặc sự kết hợp của những điều này. Trong các chương tiếp theo, chúng ta sẽ bàn về các khía cạnh này của sự tẩy não này.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="04.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="06.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="04.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="06.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

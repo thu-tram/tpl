@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Người nghiện YouTube / Twitch / Instagram - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="người-nghiện-youtube--twitch--instagram"><a class="header" href="#người-nghiện-youtube--twitch--instagram">Người nghiện YouTube / Twitch / Instagram</a></h1>
+<p>Người nghiện thuộc nhóm này nên được xếp chung với những người nghiện thường, nhưng tác động của nó lại nguy hiểm ngấm ngầm đến mức xứng đáng có một chương riêng. Nó dẫn đến sự suy giảm khả năng tự chủ và vô cùng nguy hại, hãy xem thử trường hợp của một người nghiện trên diễn đàn NoFap:</p>
+<blockquote>
+<p><em>"Tôi đã nhịn porn được 3 tuần rồi, sự lo lắng của vợ tôi về khả năng cương cứng thất thường cũng như sự "mất hứng" của bản thân trong chuyện chăn gối khiến tôi bắt đầu nghĩ về chuyện dừng xem porn. Tôi đã nói với cô ấy rằng đó là do áp lực công việc chứ không phải là do cô ấy. Cô ấy đáp lại rằng: "Em biết anh đã xử lý áp lực công việc trước đây rồi, nhưng anh sẽ cảm thấy thế nào nếu anh là em và phải chứng kiến người mình yêu thương đang tự hủy hoại bản thân?". Tôi đã không thể phủ nhận được và đã bắt đầu nỗ lực để thoát khỏi cơn nghiện quái ác này.</em></p>
+<p><em>"Tôi đã không chịu được lâu và cực kỳ cần được giải tỏa. Bị vợ từ chối nên tôi thấy mình xứng đáng được hưởng một chút, tôi tự thuyết phục bản thân rằng sẽ ổn thôi nếu tôi 'tự giới hạn' bản thân và chỉ xem trên YouTube. Nhưng vợ tôi cuối cùng đã 'xuôi lòng' khi đêm xuống và muốn được làm chuyện ấy, tuy nhiên tôi lại mệt mỏi và 'hết pin' nên đã viện cớ đau đầu. Tôi không thể chịu đựng được ý nghĩ về sự thất vọng mà điều này sẽ gây ra cho vợ tôi. Sau đó, tôi dần dần quay trở lại con đường cũ, với YouTube trở thành 'hậu cung' ảo mới. Tôi nhớ mình đã khá hài lòng vào thời điểm đó, nghĩ rằng ít nhất mình cũng đã cắt giảm được lượng tiêu thụ. Cuối cùng, cô ấy cảnh cáo tôi vì đã lơ cô ấy trên giường. Tôi đã không nhận ra điều đó, nhưng cô ấy đã mô tả những lần chúng ta tranh cãi và tôi chạy ra khỏi nhà. Những lúc khác, mất hai tiếng để mua một món đồ nhỏ và giả vờ bị bong gân. Tôi đã viện những cái cớ yếu ớt để trốn tránh việc đó, vì vậy khi tôi có một hậu cung ảo đáng tin cậy thì mọi thứ thậm chí còn khó khăn hơn."</em></p>
+</blockquote>
+<p>Điều tồi tệ nhất về người nghiện trên YouTube là nó củng cố thêm ngụy biện trong tâm trí họ rằng họ đang cảm thấy "thiếu". Đồng thời, nó khiến cho lòng tự trọng của người nghiện bị tổn thương nghiêm trọng; một người vốn trung thực có thể buộc mình phải lừa dối người thân yêu. Có lẽ điều đó đã xảy ra, hoặc vẫn đang xảy ra với bạn dưới một hình thức nào đó.</p>
+<p>Các vấn đề gặp phải với các trang web như Twitch, Instagram, TikTok, Twitter (và hầu hết các mạng xã hội) chủ yếu là do sự <em>bổ sung</em>. Bị thúc đẩy bởi những thôi thúc dopamine tìm kiếm sự mới lạ, họ tự lừa dối mình khi tin rằng họ đang ở trên một trang web "an toàn". Hãy nhớ — cảm giác hồi hộp nằm ở việc tìm kiếm, không phải việc giải tỏa cơn thèm, và con tiểu quỷ không quan tâm 'liều' của nó đến từ đâu. Đối với người nghiện, nội dung 'nhẹ nhàng' từ các nguồn cung khác nhau của họ mang lại cho họ sự xoa dịu cơn vật vã thoáng qua, giữ họ luôn nghiện và chờ đợi lần xem porn tiếp theo.</p>
+<p>Người mẫu trong ảnh/video quả thực rất đẹp, và nếu bạn có họ bên cạnh ngay lúc này, chắc chắn họ có thể mang lại cho bạn khoái lạc, nhưng hình ảnh đó thì không thể. Tất cả chỉ là ảo giác. Bộ não của bạn bị đánh lừa như một con bò tót lao vào tấm vải đỏ, và sau đó không hiểu tại sao mình lại làm vậy. Có thể bạn nghĩ rằng chỉ cần "xem" những hình ảnh đó thôi mà không cần thủ dâm. Nhưng hãy nhớ rằng bộ não của bạn đã bị nghiện sự mới lạ vô hạn, và con tiểu quỷ không quan tâm 'liều' của nó đến từ đâu. Rốt cuộc, đó vẫn là cái bẫy như cũ.</p>
+<p>Có lẽ bạn đã từng xem bộ phim truyền hình <em>Columbo</em>. Chủ đề của mỗi tập phim đều tương tự nhau. Tên tội phạm, thường là một doanh nhân giàu có và được kính trọng, đã thực hiện một vụ giết người mà hắn tin là hoàn hảo, và sự tự tin vào việc tội ác của mình sẽ không bị phát hiện được củng cố khi hắn phát hiện ra rằng Thám tử Columbo trông có vẻ tồi tàn và không mấy ấn tượng lại phụ trách vụ án.</p>
+<p>Columbo có một thói quen gây bực bội là đóng cửa lại sau khi kết thúc cuộc thẩm vấn, đã đảm bảo với nghi phạm rằng anh ta đã trắng án. Nhưng ngay trước khi vẻ mặt mãn nguyện kịp biến mất khỏi khuôn mặt của kẻ giết người, Columbo lại xuất hiện, nói: "<em>Just one small point, sir, which I'm sure you can explain...</em>" (Chỉ một điểm nhỏ thôi, thưa ngài, mà tôi chắc rằng ngài có thể giải thích...). Nghi phạm lắp bắp, và từ thời điểm đó trở đi, hắn biết rằng Columbo sẽ dần dần khuất phục hắn. Dù tội ác có ghê tởm đến đâu, từ thời điểm đó trở đi, sự thông cảm lại nghiêng về phía kẻ giết người.</p>
+<p>Những cơn vật vã này cũng tương tự, sự căng thẳng khi không được phép vượt qua 'vạch đỏ' để có được 'liều thuốc' porn mà họ 'xứng đáng được hưởng', rồi tự hỏi khoái lạc ở đâu sau khi đã 'xem porn' xong. Nỗi sợ vượt qua làn ranh, mất kiểm soát và quay trở lại giường, chỉ để rồi bị nỗi sợ hãi đeo bám rằng bạn tình muốn quan hệ. Những video YouTube 'an toàn' sẽ không còn thỏa mãn bạn nữa do sự chai sạn, thiếu sự mới lạ, và sự chắc chắn rằng sớm hay muộn bạn cũng sẽ truy cập trang phim đen yêu thích của mình. Sự tủi nhục và xấu hổ tột cùng sau đó là khi sự chắc chắn đó trở thành sự thật, quay trở lại 'hậu cung' và xem liên tục không ngừng nghỉ.</p>
+<p><strong>ÔI, NHỮNG NIỀM VUI CỦA VIỆC LÀ MỘT CON NGHIỆN PORN VÀ THỦ DÂM!</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="14.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="16.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="14.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="16.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

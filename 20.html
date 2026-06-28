@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Tránh phần thưởng ảo - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="tránh-phần-thưởng-ảo"><a class="header" href="#tránh-phần-thưởng-ảo">Tránh phần thưởng ảo</a></h1>
+<p>Nhiều người nghiện sử dụng phương pháp ý chí cố gắng tự khích lệ bằng cách tạo ra những phần thưởng ảo. Kiểu tự thưởng này có vô vàn ví dụ, trong đó phổ biến nhất là tự hứa sẽ thưởng cho mình thứ gì đó nếu nhịn được porn một tháng. Nghe thì có vẻ hợp lý, nhưng thực tế lại hoàn toàn phản tác dụng, bởi người nghiện nào còn chút lòng tự trọng thà cứ xem porn mỗi ngày còn hơn là tự "thưởng" cho mình kiểu đó. Cách này gieo rắc nghi ngờ vào tâm trí người nghiện, vì họ không chỉ phải "kiêng" trong tận <em>ba mươi ngày</em>, mà họ còn không chắc liệu mình có thực sự <em>tận hưởng</em> những ngày không có porn hay không. Thú vui/chỗ dựa tinh thần duy nhất của họ đã bị tước đoạt. Tất cả những điều này chỉ làm tăng thêm cảm giác hy sinh mà người nghiện thấy mình đang phải gánh chịu, giờ đây porn lại càng trở nên quý giá.</p>
+<p>Một số ví dụ khác có thể kể đến:</p>
+<ul>
+<li>Tôi sẽ dừng xem porn để buộc bản thân phải đi chạm cỏ, tương tác với xã hội thật và trải nghiệm tình dục thật nhiều hơn.</li>
+<li>Tôi sẽ dừng xem porn để bứt phá nguồn năng lượng tiềm ẩn, vượt mặt đối thủ và có được người bạn đời trong mơ.</li>
+<li>Tôi sẽ dừng xem porn để tập trung toàn lực, không còn "đốt" năng lượng và nhiệt huyết vào porn nữa, mà dồn sức bồi đắp khát vọng của bản thân.</li>
+</ul>
+<p>Đây đúng là những lợi ích bạn hoàn toàn có thể vươn tới — nhưng hãy tỉnh táo nhìn lại. Kể cả khi bạn cán đích những mục tiêu trên, một khi cái mới mẻ qua đi, bạn sẽ lại thấy hụt hẫng; nếu không đạt được, bạn sẽ càng tuyệt vọng. Tóm lại, sớm muộn gì bạn cũng sẽ "sa chân" trở lại vũng lầy cũ.</p>
+<p>Liên kết việc dừng xem porn với phần thưởng giả chỉ làm gia tăng thêm sự nghi ngờ, bởi vì nếu bạn không chạm tay được vào phần thưởng (hoặc kể cả khi bạn có), bạn sẽ bắt đầu tự hỏi bản thân "<em>Liệu việc dừng xem porn có thực sự làm cho cuộc sống của tôi tốt hơn không? Nếu tôi dừng xem porn mà không đạt được điều mình muốn, liệu tôi đã thực hiện đúng cách?</em>". Những suy nghĩ này càng khơi dậy cảm giác "hy sinh", và vì thế làm bùng phát triệu chứng cai nghiện.</p>
+<p>Một ví dụ khác: "Những lời thề trên mạng hay trên các diễn đàn". Chúng có lợi thế là loại bỏ được sự cám dỗ trong những khoảng thời gian nhất định. Tuy nhiên, chúng thường thất bại vì những lý do sau:</p>
+<ol>
+<li>Phần thưởng là giả. Tại sao bạn lại muốn dừng xem porn chỉ vì những người khác cũng đang làm như vậy? Chúng chỉ khiến người nghiện thêm áp lực và cảm giác phải từ bỏ. Sẽ không vấn đề gì nếu tất cả người nghiện thực sự muốn dừng xem porn vào một thời điểm cụ thể — nhưng bạn không thể ép họ cai, kể cả khi trong thâm tâm họ đều muốn cai. Cho đến khi họ sẵn sàng làm như vậy, một hiệp ước sẽ tạo thêm áp lực, điều này chỉ làm tăng thêm ham muốn xem của họ. Điều này biến họ thành những người xem lén lút, càng gia tăng cảm giác phụ thuộc.</li>
+<li>Sự phụ thuộc lẫn nhau khi sử dụng phương pháp ý chí sinh ra cảm giác như trải qua một giai đoạn sám hối, và trong giai đoạn ấy lại cố gắng đợi cho cơn thèm tự biến mất. Nếu bỏ cuộc thì người nghiện lại cảm thấy thất bại. Khi sử dụng phương pháp ý chí, ít nhất một người sẽ bỏ cuộc, và những người khác cũng sẽ lấy đó làm cớ để ngừng hành hạ bản thân. Đó không phải là lỗi của họ, họ đã cố gắng cầm cự nhưng "thằng An" đã làm họ thất vọng. Sự thật là hầu hết bọn họ đã gian lận từ trước rồi (Xin lỗi ông nào tên là An nhé =))).</li>
+<li>Việc "chia sẻ công trạng" (Sharing the credit) trái ngược với sự phụ thuộc. Có một cảm giác thành tựu tuyệt vời khi dừng xem porn và khi làm điều đó một mình, sự tán dương mà bạn nhận được từ bạn bè và những người anh em trên mạng có thể là một động lực to lớn trong vài ngày đầu tiên. Nhưng khi ai cũng "lao vào" cùng lúc, công trạng sẽ bị <em>chia năm xẻ bảy</em>, và động lực cũng giảm nhiệt theo.</li>
+<li>Một ví dụ kinh điển khác là lời hứa của "guru". Cai nghiện sẽ mang lại hạnh phúc cho bạn vì bạn không còn tham gia vào cuộc giằng co nữa, bộ não của bạn bắt đầu nối dây lại và lấy lại khả năng kiểm soát xung động (impulse control). Tuy nhiên, bạn phải nhớ rằng điều này sẽ không biến bạn thành một vị thần tình dục hay trúng xổ số. Không ai ngoài bạn quan tâm rằng bạn có dừng xem porn hay không. Bạn không phải là một đứa yếu đuối nếu bạn dùng porn ba lần một ngày và bị PIED (rối loạn cương dương do porn - Porn Induced Erectile Dysfunction), hoặc là một người mạnh mẽ nếu bạn nghiện porn mà không mắc PIED.</li>
+</ol>
+<p>Đừng tự lừa dối bản thân nữa. Dù thế nào đi nữa, mấy cái "phần thưởng" vớ vẩn kia cũng chẳng tạo ra khác biệt, mà chỉ đổ thêm dầu vào lửa thôi. Thay vào đó, hãy nhìn thẳng vào vấn đề:</p>
+<p>"Tôi được lợi lộc gì từ porn? Tại sao tôi lại "phải" xem porn?"</p>
+<p>Hãy tiếp tục nhìn vào phía bên kia của cuộc giằng co và tự hỏi bản thân xem porn đang làm gì cho bạn. <em>HOÀN TOÀN KHÔNG GÌ CẢ.</em> Tại sao tôi cần phải xem porn? <em>BẠN KHÔNG CẦN! BẠN CHỈ ĐANG TỰ TRỪNG PHẠT BẢN THÂN MÌNH THÔI.</em> Đây giống như canh bạc Pascal: bạn gần như chẳng mất gì (vài phút kích thích đang tàn lụi), trong khi lại có cơ hội rất lớn để được lợi — khả năng hưng phấn tự nhiên, sự bình an trong tâm trí, và một cuộc sống hạnh phúc hơn. Và điều quan trọng nhất: không có rủi ro thật sự nào cả.</p>
+<p>Vậy tại sao không tuyên bố việc dừng xem porn của bạn với bạn bè và gia đình? Chà, điều đó sẽ biến bạn thành một người <em>từng</em> nghiện hoặc <em>từng</em> dùng đáng tự hào, chứ không phải một người không xem porn hạnh phúc.</p>
+<p>Việc nhờ người khác giúp bạn trong quá trình dừng xem porn đều khiến cho con tiểu quỷ trở nên mạnh hơn. Việc gạt nó ra khỏi tâm trí và hoàn toàn phớt lờ nó chẳng khác gì việc cố gắng <em>không</em> nghĩ về nó. Thay vào đó, hãy tập chánh niệm (mindful), ngay khi bạn phát hiện ra những suy nghĩ, tín hiệu (ở nhà một mình) hoặc những suy nghĩ lơ đãng, chỉ cần tự nhủ với bản thân <em>"Tuyệt vời, tôi không còn là nô lệ của porn nữa. Tôi tự do và hạnh phúc"</em> Điều này sẽ cắt đứt nguồn oxy cung cấp cho suy nghĩ và ngăn nó bùng cháy thành những thôi thúc và những cơn thèm. Bạn cũng có thể thực hành thiền chánh niệm để hỗ trợ quá trình "vô hiệu hóa" suy nghĩ (depersonalisation of thoughts).</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="19.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="21.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="19.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="21.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

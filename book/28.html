@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lần truy cập cuối cùng - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="lần-truy-cập-cuối-cùng"><a class="header" href="#lần-truy-cập-cuối-cùng">Lần truy cập cuối cùng</a></h1>
+<p>Khi đã chọn được thời điểm, bạn đã sẵn sàng để ghé thăm cái "hậu cung" lần cuối. Nhưng trước khi làm điều đó, hãy kiểm tra lại hai điều cốt lõi sau:</p>
+<ol>
+<li>Bạn có thực sự tin chắc rằng mình sẽ thành công?</li>
+<li>Trong lòng bạn là cảm giác chán nản, nặng nề, hay là sự háo hức vì sắp đạt được điều gì đó tuyệt vời?</li>
+</ol>
+<p>Nếu còn chút ngần ngại nào, hãy đọc lại cuốn sách này. Hãy nhớ: bạn chưa bao giờ <em>chủ động</em> rơi vào cái bẫy mang tên porn — chính cái bẫy đó được thiết kế để nhốt bạn cả đời. Để thoát ra, bạn cần đưa ra một quyết định rõ ràng và dứt khoát: rằng bạn sắp dừng xem porn lại, và thực hiện <strong>lần truy cập cuối cùng</strong> của mình.</p>
+<p>Bạn đọc đến đây, đơn giản vì trong lòng bạn thật sự <em>khao khát</em> được tự do. Vậy thì hãy đưa ra quyết định đó ngay lúc này, hãy thề với chính mình rằng khi bạn đóng cái cửa sổ riêng tư kia lại — dù có dễ hay khó — bạn sẽ không bao giờ quay lại hậu cung ấy nữa. Có thể bạn lo vì đã thề như vậy nhiều lần rồi mà vẫn thất bại, hoặc bạn sợ rằng lần này sẽ rất đau đớn. Nhưng đừng sợ — điều tệ nhất có thể xảy ra chỉ là bạn thất bại, mà nếu vậy thì bạn chẳng mất gì cả, chỉ có thể <em>được thêm</em> mà thôi.</p>
+<p>Giờ hãy đặt cái ý nghĩ về thất bại sang một bên — sự thật tuyệt vời là việc dừng xem porn không chỉ dễ dàng đến nực cười đâu, bạn còn có thể thực sự tận hưởng cái quá trình này nữa. Lần này dùng hẳn phương pháp EasyPeasy mà! Tất cả những gì bạn cần làm chỉ là làm theo những hướng dẫn đơn giản sắp được đưa ra dưới đây:</p>
+<ol>
+<li>Hãy lập lời thề nghiêm túc ngay bây giờ — và phải <em>thực lòng</em> tin vào nó.</li>
+<li>Lướt xem mấy cái hình ảnh và clip trên <strong>trang phim đen</strong> yêu thích của bạn một cách có ý thức, nhìn vào mấy cái nỗ lực tuyệt vọng của mấy quản trị viên trang web, diễn viên và thậm chí cả mấy tay mơ để khuếch đại cái sự gây sốc, mới lạ và siêu phàm của "hàng" của họ lên xem, rồi tự hỏi bản thân xem vui ở chỗ nào.</li>
+<li>Khi cuối cùng bạn đóng trình duyệt lại, đừng đóng nó với cái cảm giác kiểu "<em>Mình không bao giờ được <strong>truy cập</strong> hậu cung ảo nữa</em>" hay "<em>Mình không được phép <strong>truy cập</strong> nó nữa</em>" mà thay vào đó hãy đóng nó với một cảm giác tự do, kiểu "<em>Tuyệt vời thật! Mình được tự do rồi! Mình không còn là nô lệ của porn nữa! Mình sẽ không bao giờ phải <strong>truy cập</strong> mấy cái trang web dơ bẩn này trong đời nữa.</em>"</li>
+<li>Hãy nhận thức được rằng trong vài ngày tới, sẽ có một <em>kẻ phá hoại porn</em> nhỏ bé bên trong dạ dày bạn đấy. Có khi bạn chỉ nhận thức được cái cảm giác muốn có một lần xem porn. Con tiểu quỷ porn đó đã được nhắc đến như là cơn thèm khát nhẹ nhàng về thể xác đối với dopamine. Nhưng điều này không chính xác, và điều quan trọng là phải hiểu tại sao. Bởi vì phải mất đến ba tuần thì con tiểu quỷ đó mới chết hẳn, mấy người đã dừng xem porn hay tin rằng con tiểu quỷ đó sẽ tiếp tục thèm khát sau <strong>lần truy cập</strong> hậu cung ảo cuối cùng, và do đó họ phải sử dụng ý chí để chống lại sự cám dỗ trong suốt giai đoạn này. Không phải vậy đâu, cơ thể không hề thèm khát dopamine do porn kích hoạt đâu; chỉ có não bộ mới thèm khát thôi.</li>
+</ol>
+<p>Nếu bạn thực sự có cái cảm giác muốn "xem một lần" trong vài ngày tới, bộ não của bạn có một lựa chọn đơn giản thôi. Nó có thể hoặc là giải thích cái cảm giác đó đúng với bản chất thực sự của nó — một cảm giác trống rỗng, bất an bắt nguồn từ <strong>lần truy cập</strong> đầu tiên vào một trang web porn và tiếp tục được duy trì bởi mỗi <strong>lần truy cập</strong> tiếp theo, và tự nhủ với bản thân <strong>"TUYỆT VỜI! TÔI ĐÃ LÀ NGƯỜI KHÔNG XEM PORN RỒI!"</strong></p>
+<p>Hoặc là, bạn có thể bắt đầu thèm khát porn và chịu đựng khổ sở trong suốt phần đời còn lại. Nghĩ mà xem, làm như thế có phải là quá ngu ngốc không cơ chứ? Vừa nói "<em>Mình không bao giờ muốn xem porn nữa</em>" xong lại dành cả phần đời còn lại để nói "<em>Mình thèm truy cập hậu cung quá</em>"? Đấy là cái kiểu mà mấy người nghiện dùng phương pháp ý chí hay làm, để rồi lại cảm thấy khốn khổ. Dành cả phần đời còn lại để buồn rầu ủ rũ vì một thứ mà họ đang hết sức hy vọng là mình sẽ không bao giờ có lại được. Bảo sao mà ít người thành công đến thế, mà số người hiếm hoi thành công được thì cũng chẳng thể cảm thấy hoàn toàn tự do.</p>
+<blockquote>
+<p><em>'Hãy hình dung rõ ràng bức tranh tinh thần này trong tâm trí bạn, vì nó có thể khá hữu ích trong việc vượt qua sức mạnh của các kích thích bên ngoài làm phiền bạn. Hãy hình dung bản thân bạn đang ngồi yên lặng, mặc cho điện thoại reo, phớt lờ tín hiệu của nó, không hề lay chuyển bởi mệnh lệnh của nó. Mặc dù bạn nhận thức được nó, bạn không còn bận tâm hay tuân theo nó nữa. Cũng hãy khắc sâu vào tâm trí bạn cái thực tế rằng bản thân tín hiệu bên ngoài không có quyền lực gì đối với bạn cả, không có quyền lực nào để lay chuyển bạn cả. Trong quá khứ, bạn đã tuân theo nó, phản ứng với nó, hoàn toàn chỉ là do thói quen thôi. Nếu bạn muốn, bạn hoàn toàn có thể hình thành một thói quen mới là không phản ứng lại nó.</em></p>
+<p><em>'Cũng nên lưu ý rằng việc bạn không phản ứng lại không bao gồm việc làm điều gì đó, hoặc nỗ lực, hoặc chống cự hay chiến đấu, mà là không làm gì cả — là thư giãn mà không làm gì cả. Bạn chỉ đơn giản là thư giãn, phớt lờ tín hiệu và để cho tiếng gọi của nó trôi qua mà không được để ý đến. Tiếng chuông điện thoại là một phép loại suy mang tính biểu tượng cho bất kỳ và mọi kích thích bên ngoài nào khác mà bạn thường quen giao quyền kiểm soát cho chúng và bây giờ bạn chọn cách cố ý thay đổi thói quen đó.</em>'</p>
+<p>--- Maxwell Maltz, <em>The New Psycho Cybernetics</em> Ch. 12.</p>
+</blockquote>
+<p>Chính sự nghi ngờ và chờ đợi mới khiến việc dừng xem porn trở nên khó khăn, <em><strong>vậy nên đừng bao giờ nghi ngờ quyết định của bạn</strong></em> vì bạn biết rằng đó là một quyết định đúng đắn. Nếu bạn bắt đầu nghi ngờ nó, bạn sẽ tự đặt mình vào một tình thế "không ai thắng". Khốn khổ vì thèm muốn một <strong>lần truy cập</strong>, nhưng lại không thể có được. Bất kể bạn đang sử dụng hệ thống nào, bạn đang cố gắng đạt được điều gì khi dừng xem porn vậy? Không bao giờ xem lại nữa ư? Không phải! Nhiều người đã dừng xem porn làm được điều đó thật đấy nhưng lại sống cả phần đời còn lại với cảm giác thiếu thốn.</p>
+<p>Vậy sự khác biệt giữa người nghiện và người không xem porn là gì? Người không xem porn không có bất kỳ nhu cầu hay ham muốn xem porn nào cả, họ không thèm khát và không cần phải sử dụng ý chí để không xem Porn. Đấy là những gì bạn đang cố gắng đạt được và bạn hoàn toàn có khả năng làm được điều đó. Bạn không cần phải chờ đợi để hết thèm khát porn hoặc trở thành một người không xem porn, mọi chuyện đã hoàn tất ngay khi bạn đóng cái cửa sổ trình duyệt cuối cùng đó lại, cắt đứt nguồn cung cấp dopamine. <strong>BẠN ĐÃ LÀ MỘT NGƯỜI KHÔNG XEM PORN HẠNH PHÚC RỒI ĐẤY!</strong></p>
+<p>Bạn sẽ luôn là một người không xem porn hạnh phúc miễn là:</p>
+<ol>
+<li>Bạn không bao giờ nghi ngờ quyết định của mình.</li>
+<li>Bạn không chờ đợi để trở thành một người không xem porn. Nếu bạn làm vậy, bạn sẽ chỉ đơn thuần là chờ đợi một điều gì đó không bao giờ xảy ra và tự tạo ra một nỗi ám ảnh trong bản thân thôi.</li>
+<li>Bạn không cố gắng <em>không</em> nghĩ về porn hoặc chờ đợi 'khoảnh khắc bừng tỉnh' đến, tự tạo ra một nỗi ám ảnh.</li>
+<li>Bạn không sử dụng các loại hình porn thay thế.</li>
+<li>Bạn nhìn nhận tất cả những người nghiện khác đúng với bản chất thật của họ và thương hại họ chứ không phải ghen tị với họ.</li>
+</ol>
+<p>Dù là ngày tốt hay ngày tồi tệ, đừng thay đổi cuộc sống của bạn chỉ vì bạn đã dừng xem porn. Nếu bạn làm vậy, bạn sẽ đang thực hiện một sự hy sinh thực sự trong khi không cần thiết phải như vậy. Hãy nhớ rằng, bạn không hề từ bỏ cuộc sống. Bạn không hề từ bỏ bất cứ thứ gì cả. Ngược lại, bạn đã tự chữa khỏi cho mình khỏi một căn bệnh khủng khiếp và thoát ra được cái lồng giam xảo quyệt (insidious prison) ấy. Khi ngày tháng trôi qua và sức khỏe của bạn — cả về thể chất lẫn tinh thần — được cải thiện, những khoảnh khắc thăng hoa sẽ trở nên thăng hoa hơn và những khoảnh khắc tồi tệ sẽ bớt tồi tệ hơn so với khi bạn còn là một người nghiện. Bất cứ khi nào bạn nghĩ về porn trong vài ngày tới hoặc phần còn lại của cuộc đời mình, hãy nghĩ:</p>
+<p><em><strong>"TUYỆT VỜI! TÔI LÀ NGƯỜI KHÔNG XEM PORN RỒI!"</strong></em></p>
+<h2 id="một-cảnh-báo-cuối-cùng"><a class="header" href="#một-cảnh-báo-cuối-cùng">Một cảnh báo cuối cùng</a></h2>
+<p>Không một người nghiện nào, nếu được trao cơ hội quay ngược thời gian trở về thời điểm trước khi họ bị nghiện, với kiến thức mà họ có được bây giờ, lại chọn bắt đầu nghiện cả. Hàng vạn người đã dừng xem porn thành công trong nhiều năm đang sống một cuộc sống hoàn toàn hạnh phúc, chỉ để rồi lại bị mắc bẫy một lần nữa. Tôi tin rằng cuốn sách này sẽ giúp bạn thấy việc dừng xem porn tương đối dễ dàng. Nhưng hãy cảnh giác, những người nghiện thấy việc dừng xem porn dễ dàng cũng thấy việc bắt đầu lại dễ dàng không kém. <strong>Đừng rơi vào cái bẫy này.</strong></p>
+<p>Dù bạn đã dừng xem porn được bao lâu hoặc bạn tự tin đến đâu rằng mình sẽ không bao giờ bị nghiện lại, hãy đặt ra một quy tắc cho cuộc đời là không xem porn vì bất kỳ lý do gì. Hãy chống lại những ám chỉ và bóng gió trên các phương tiện truyền thông, và hãy nhớ rằng họ đang cố gắng thúc đẩy hình ảnh 'cởi mở' của mình bằng cách đưa porn trở thành mainstream, mà không nhận ra rằng porn và thủ dâm cưỡng chế là kẻ giết chết các mối quan hệ và cảm giác hạnh phúc cá nhân của vô số đàn ông và số lượng phụ nữ ngày càng tăng.</p>
+<p>Hãy nhớ rằng lần "xem một lúc" hoặc truy cập đầu tiên đó sẽ chẳng mang lại lợi ích gì cho bạn đâu. Bạn sẽ không có cơn đau cai nghiện nào để giải tỏa cả và nó sẽ chỉ khiến bạn cảm thấy tồi tệ thôi. Những gì nó sẽ làm là đưa cái thú vui của cảm giác thỏa mãn dopamine trở lại tâm trí và não bộ bạn, và một giọng nói nhỏ sau gáy bạn sẽ lại nói với bạn rằng bạn muốn có thêm một lần xem nữa. Rồi lúc đó bạn lại phải lựa chọn giữa việc chịu khó một chút, hoặc là bắt đầu lại toàn bộ cái chuỗi dơ bẩn đó một lần nữa.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="27.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="29.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="27.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="29.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

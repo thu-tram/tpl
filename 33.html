@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Tài nguyên - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="tài-nguyên"><a class="header" href="#tài-nguyên">Tài nguyên</a></h1>
+<p>Các tài nguyên được liệt kê trong phần này đều là Tiếng Anh, nếu bạn muốn đọc thêm thì có thể mở bản gốc Tiếng Anh để tìm hiểu thêm. Dưới đây sẽ là các phần mà mình đã dịch về Tiếng Việt.</p>
+<ul>
+<li><a href="phu-luc/easypeasy-statements.html">Tuyên ngôn</a> - Bản dịch cho bài <a href="https://old.reddit.com/r/pmohackbook/comments/id6nie/easypeasy_statements_checklist/">EasyPeasy Statements Checklist</a> - SWATxKATS</li>
+<li><a href="phu-luc/tai-nghien.html">Tái nghiện</a> - Bản dịch cho bài <a href="https://old.reddit.com/r/pmohackbook/comments/mynwjl/why_youre_relapsing/">Why you're relapsing - u/Different_Guide_5205</a></li>
+<li><a href="phu-luc/doi-pho-voi-noi-so.html">Đối phó với nỗi sợ</a> - Bản dịch cho bài <a href="https://old.reddit.com/r/pmohackbook/comments/n5027n/countering_fear/">Countering Fear - u/Different_Guide_5205</a></li>
+</ul>
+<h2 id="kết-hợp-easypeasy-với-avrt-của-jack-trimpey"><a class="header" href="#kết-hợp-easypeasy-với-avrt-của-jack-trimpey">Kết hợp EasyPeasy với AVRT của Jack Trimpey</a></h2>
+<p><em>Được viết bởi az#8773 trên Discord</em></p>
+<p>Phần này dành cho những ai đã thử áp dụng phương pháp Easyway của Allen Carr để thoát nghiện nhưng vẫn chưa thành công, dù đã gỡ bỏ phần tẩy não trong đầu. Tôi sẽ giả định rằng bạn đã từng đọc ít nhất một cuốn sách của Allen Carr và hiểu rõ phương pháp Easyway (hay còn gọi là Easypeasy). Nếu chưa, tôi rất khuyến khích bạn đọc – nó cực kỳ quan trọng. Ngoài ra, nếu có thể, bạn hãy tìm đọc cuốn Rational Recovery của Jack Trimpey. Nếu chưa đọc thì cũng không sao vì tôi sẽ tóm lược những điểm chính ở đây, nhưng nếu bạn muốn đào sâu hơn thì nên đọc toàn bộ cuốn sách.</p>
+<p>Bài viết này không nhắm đến một loại nghiện cụ thể nào, mà có thể áp dụng cho mọi loại nghiện. Mục tiêu là so sánh Easyway với một phương pháp thành công khác là Kỹ thuật Nhận Diện Giọng Nghiện – (AVRT - Addictive Voice Recognition Technique), và sau đó kết hợp cả hai lại. Dù tôi vẫn tin Easyway vượt trội hơn tất cả các phương pháp khác, nhưng hiểu rõ AVRT có thể là “mảnh ghép còn thiếu” đối với những ai đã giết xong “con đại quỷ” mà vẫn chưa thực sự thoát khỏi vòng nghiện.</p>
+<p>Có vô số phương pháp để vượt qua chứng nghiện, và mỗi phương pháp lại có tỷ lệ thành công khác nhau. Tôi sẽ không đi sâu vào bất kỳ phương pháp nào trong số đó bởi phần lớn chúng đều lãng phí thời gian và tôi muốn giữ cho phần này ngắn gọn nhất có thể. Các phương pháp duy nhất mà tôi sẽ đề cập đến là phương pháp Easyway của Allen Carr và AVRT của Jack Trimpey (nhà sáng lập Rational Recovery). Cả hai phương pháp này đều sở hữu tỷ lệ thành công vô cùng ấn tượng, nhưng mỗi phương pháp lại hướng đến một khía cạnh khác nhau.</p>
+<p>Điểm tương đồng giữa Easyway và AVRT nằm ở chỗ Easyway phân tách chứng nghiện thành con tiểu quỷ và con đại quỷ, còn AVRT lại phân tách tâm trí của bạn thành "Giọng nghiện" (hay còn gọi là "con quái thú") và "bạn thật sự". 'Giọng nghiện' và 'con tiểu quỷ' thực chất là một, còn 'con đại quỷ' (hay còn gọi là sự "tẩy não") là hệ thống niềm tin mà bạn ôm giữ, khiến bạn lầm tưởng rằng chứng nghiện mang đến cho bạn một lợi ích hoặc một điểm tựa tinh thần nào đó. Easyway tập trung tiêu diệt con đại quỷ, còn AVRT thì hoàn toàn bỏ qua nó, chỉ xử lý con tiểu quỷ. Easyway phá hủy phần nghiện trong tâm lý, còn AVRT dạy bạn nhận diện và tách mình ra khỏi cơn nghiện vật lý đang ngụy trang thành “bạn”.</p>
+<p>Điều thú vị là cả hai phương pháp đều rất thành công dù chúng nhắm vào hai phần đối lập.</p>
+<p>Tôi vẫn tin Easyway là phương pháp tốt nhất. Tuy nhiên, tôi cũng thấy nó có hai điểm yếu nhỏ. Thứ nhất, nó đánh giá thấp vai trò của con tiểu quỷ. Theo kinh nghiệm của tôi và những người khác, nhiều người thất bại không phải vì chưa tiêu diệt xong con đại quỷ (dù trường hợp đó có xảy ra), mà là vì coi thường con tiểu quỷ. Với đa số thì con tiểu quỷ đúng là chẳng đáng ngại, và đó là lý do Easyway hiệu quả với nhiều người. Nhưng với một số người (trong đó có tôi), nó vẫn đủ sức kéo bạn quay lại nghiện. Điểm yếu thứ hai của Easyway là giả định rằng nếu bạn thất bại, thì chỉ có hai lý do: hoặc là bạn không làm đúng hướng dẫn, hoặc là bạn chưa tiêu diệt được con đại quỷ.</p>
+<p>Điểm mấu chốt của phương pháp Easyway là như sau. Chứng nghiện bao gồm hai yếu tố cấu thành: sự nghiện về mặt thể chất với dopamine và sự nghiện về mặt tâm lý, được xây dựng dựa trên những niềm tin ("sự tẩy não") rằng chứng nghiện ấy mang đến cho bạn một khoái cảm hoặc một điểm tựa tinh thần nào đó. Chúng lần lượt được gọi là con tiểu quỷ và con đại quỷ. Theo Easyway, con tiểu quỷ thực chất chỉ là một cảm giác trống trải, hơi bất ổn, gần như không thể cảm nhận được. Một khi bạn triệt tiêu được con đại quỷ bằng cách xóa bỏ "sự tẩy não", bằng sự thấu hiểu rằng chứng nghiện của bạn hoàn toàn vô bổ và mọi khoái lạc hay điểm tựa tinh thần chỉ là ảo tưởng, và quan trọng không kém, bằng sự xác tín rằng cuộc sống của bạn khi không còn chứng nghiện sẽ chẳng có gì đáng sợ cả, thì cơn thèm sẽ tự tan biến. Cơn thèm thực chất bắt nguồn từ nỗi sợ hãi rằng cuộc sống mà thiếu đi điểm tựa tinh thần nhỏ nhoi kia sẽ trở nên vô cùng khó khăn, điều này khơi dậy sự hoài nghi trong bạn về việc đoạn tuyệt với porn, và đó chính là cơn thèm. Bạn chiến thắng nỗi sợ hãi bằng cách nhận ra cuộc sống của bạn sẽ trở nên phong phú và ý nghĩa hơn biết bao khi không còn nghiện, và bạn nuôi dưỡng cảm xúc tuyệt vời ấy.</p>
+<p>Mặc dù tôi vẫn tin rằng đây là liệu pháp ưu việt nhất để phục hồi khỏi chứng nghiện, Easyway lại chưa chú trọng đúng mức đến con tiểu quỷ bởi về lý thuyết, chỉ cần giết xong con đại quỷ thì con tiểu quỷ sẽ tự chết theo. Nhưng như tôi đã nói, điều này không đúng với tất cả mọi người. Và khi người ta thất bại, Easyway chỉ đưa ra hai nguyên nhân (như đã nói ở trên) và phần này vẫn còn bất cập. Tôi sẽ giải thích ngay đây.</p>
+<p>AVRT chia não thành hai phần: vùng não dưới (hệ viền - limbic system) – nơi trú ngụ của cơn nghiện, và vùng não trên (vỏ não trước trán hay "prefrontal cortex") – nơi "bạn thật sự" (hoặc ít nhất là ý thức và bản ngã của bạn) hiện hữu. Jack Trimpey gọi giọng nghiện là “con thú” vì nó sống trong phần “con vật” của não bộ, và nó chỉ biết một điều duy nhất: “Tôi muốn cái đó, và tôi muốn ngay bây giờ”. Tôi không thích gọi nó là “con quái thú” nhưng thà thế còn hơn là tưởng nó là mình. Giọng nghiện (AV – addictive voice, tức là con tiểu quỷ) sẽ chiếm lấy giọng nói nội tâm của bạn để dụ bạn quay lại với cơn nghiện. Nó không tự điều khiển được tay chân bạn nên nó phải dùng giọng nói nội tâm để xúi giục. Bạn có thể thử ngay bây giờ: giơ tay lên và thử cử động các ngón tay. Bây giờ bảo "cơn nghiện" làm điều đó. Nó không làm được. Nghĩa là quyền kiểm soát vẫn là của bạn.</p>
+<p><img src="images/avrt.png" alt="The ‘two brain&#39; model of addiction." /></p>
+<p>"Giọng nghiện" không chỉ chiếm đoạt giọng nói trong tâm trí bạn, mà còn ngụy trang một cách xảo quyệt đằng sau đại từ "tôi". Nó thường rỉ rả: “Tôi thực sự cần X ngay bây giờ.”, “Tôi nhớ cảm giác khi làm X lắm.”, “Làm X lúc này chắc đã lắm nhỉ, sau ngày hôm nay tôi xứng đáng mà...”. AVRT nhấn mạnh một sự thật rằng bạn không phải là cái giọng nghiện đó mà chỉ lầm tưởng rằng nó là mình thôi. Khi bạn nhận diện được giọng nghiện không phải là "bạn" và cương quyết nói "Không" với nó, nó sẽ bắt đầu đổi “tôi” thành “bạn”, “chúng ta”, “tụi mình”... Chính điều đó cho thấy nó không phải là bạn thật.</p>
+<p>Khi bạn cương quyết nói "Không" với "Giọng nghiện" của bạn, điều kỳ diệu này sẽ diễn ra: "Tôi thực sự có thể làm điều X ngay bây giờ" sẽ biến thành "Thôi nào, bạn thực sự có thể làm điều X ngay bây giờ mà, bạn biết rõ điều đó còn gì". "Tôi chắc chắn là nhớ lắm cảm giác làm điều X" sẽ chuyển hóa thành "Thôi nào, bạn chắc chắn là nhớ lắm cái cảm giác làm điều X mà, bạn không thấy nôn nao sao?". "Sẽ tuyệt vời biết bao nếu được làm điều X ngay lúc này, dù sao thì hôm nay tôi cũng xứng đáng mà" sẽ đổi giọng thành "Chúng ta xứng đáng được làm điều X ngay bây giờ sau tất cả những gì chúng ta đã phải chịu đựng, sao bạn có thể nhẫn tâm từ chối chúng ta điều này cơ chứ?".</p>
+<p>Đến đây, tôi cần làm rõ một điểm. Đây hoàn toàn không phải là "cuộc giằng co nội tâm" mà Allen Carr từng đề cập đến. "Cuộc giằng co" là một trạng thái bất đồng trong nhận thức, xảy ra khi bạn đồng thời tồn tại hai hoặc nhiều hơn hai hệ thống niềm tin mâu thuẫn, và là hệ quả tất yếu của việc chưa triệt tiêu được con đại quỷ. Ví dụ: "Tôi thực lòng không muốn làm điều X vì những hệ lụy tiêu cực mà nó mang lại cho tôi, nhưng nó cũng mang đến cho tôi cảm giác Y, vậy nên tôi lại khao khát được làm điều đó".  Đây chính là "cuộc giằng co", và đó là "chiêu trò" của con đại quỷ. Một khi con đại quỷ đã bị triệt hạ bằng cách xóa bỏ "sự tẩy não", những "âm thanh" duy nhất thôi thúc bạn tự nuông chiều bản thân bằng chứng nghiện sẽ chỉ còn đến từ con tiểu quỷ (tức "giọng nghiện"). Bởi "giọng nghiện" luôn sử dụng đại từ "tôi" nên dễ khiến bạn nhầm với con đại quỷ.</p>
+<p>Một điều quan trọng nữa cần làm sáng tỏ là "giọng nghiện" chắc chắn là một kẻ dối trá "chuyên nghiệp". Nó sẵn sàng lừa bạn làm những điều nguy hiểm, miễn là được thỏa mãn dopamine.</p>
+<p>Trước đó, tôi đã đề cập rằng: "Khi mọi người thất bại với Easyway, theo Easyway, chỉ có hai khả năng xảy ra, hoặc là bạn đã không tuân thủ đúng theo các hướng dẫn, hoặc là bạn chưa loại bỏ được con đại quỷ". Tôi cho rằng nhận định này có phần bất cập và sẽ giải thích cặn kẽ lý do sau đây." Tôi cho rằng nhận định này không hoàn toàn xác đáng bởi nhiều người – kể cả tôi – khi thất bại đã nghĩ rằng “Chắc mình chưa gỡ hết được sự tẩy não, phải đọc lại sách thôi”. Nhưng thật ra bạn đã giết con đại quỷ rồi. Chỉ là bạn chưa nhận diện được giọng nghiện – con tiểu quỷ – và tưởng nó là “mình”, nên quay lại chiến đấu với con đại quỷ đã chết. Thế là bạn cứ đọc đi đọc lại sách, rồi lại tái nghiện – cứ vậy lặp lại mãi.</p>
+<p>Khi "giọng nghiện" rỉ rả điều gì đó kiểu như: "Tôi muốn làm điều X ngay bây giờ vì nó khiến tôi cảm thấy Y", nếu bạn đã xóa bỏ được "sự tẩy não" và triệt tiêu được con đại quỷ, bạn có thể tự nhủ: "Nhưng tôi biết rõ rằng điều này hoàn toàn sai, vậy tại sao tôi vẫn cứ tin vào nó? Chẳng lẽ tôi vẫn chưa xóa bỏ triệt để được sự tẩy não?"</p>
+<p>Sự thật là bạn đã xóa bỏ được "sự tẩy não" rồi, minh chứng là việc bạn nhận thức rõ ràng hơn những gì "giọng nghiện" của bạn đang cố gắng rót mật vào tai bạn, chỉ là bạn lầm tưởng rằng "giọng nghiện" chính là "bạn" bởi nó vẫn luôn sử dụng đại từ "tôi" mà thôi. Khi bạn buộc nó lộ mặt – bằng cách nói “không” – và thấy nó chuyển qua dùng “bạn”, “chúng ta”, thì đó là lúc bạn biết chắc: đây không phải con đại quỷ, mà là con tiểu quỷ.</p>
+<p>Và giờ đây, khi "giọng nghiện" van nài: "Làm ơn đi mà, chúng ta chỉ cần làm điều X thêm một lần duy nhất nữa thôi để ôn lại kỷ niệm xưa, chỉ một lần thôi mà?" và bạn cương quyết đáp "Không", bạn có thể cảm nhận được một phản ứng cảm xúc nhất định, cảm thấy sợ hãi hoặc muộn phiền. Điều vô cùng quan trọng, cần phải nhận thức được rằng cảm xúc này không xuất phát từ "bạn", mà là từ con tiểu quỷ. Nếu bạn không thể nhận diện được "giọng nghiện", bạn sẽ lầm tưởng rằng cảm xúc này là của "bạn" và sẽ dễ dàng đầu hàng trước nó. Vậy nên, hãy nhận diện ra "giọng nghiện" và khắc ghi sự thật rằng những cảm xúc xuất phát từ nó hoàn toàn không phải là của "Bạn", sau đó bạn sẽ cảm thấy vô cùng phấn khích trước sự giác ngộ này.</p>
+<p>Và nếu bạn kết hợp được cả hai phương pháp – Easyway để diệt con đại quỷ, AVRT để nhận diện con tiểu quỷ – và giữ được cảm giác vui vẻ mỗi khi bạn “lật tẩy” giọng nghiện, bạn chắc chắn sẽ thành công.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="32.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="phu-luc/tai-nghien.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="32.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="phu-luc/tai-nghien.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

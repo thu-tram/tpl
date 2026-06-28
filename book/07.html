@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ta đang từ bỏ điều gì? - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ta-đang-từ-bỏ-điều-gì"><a class="header" href="#ta-đang-từ-bỏ-điều-gì">Ta đang từ bỏ điều gì?</a></h1>
+<p><strong>KHÔNG GÌ CẢ.</strong></p>
+<p>Porn khó thoát là vì ta lầm tưởng rằng mình sẽ mất đi niềm vui hay chỗ dựa tinh thần. Sợ rằng những khoảnh khắc dễ chịu trong cuộc sống sẽ không bao giờ còn trọn vẹn như trước. Sợ rằng mình sẽ không còn đủ sức để đối mặt với căng thẳng nữa. Nói cách khác, đó là tác động của sự tẩy não (brainwashing) – khiến ta tin rằng tình dục và cực khoái là thứ bắt buộc phải có của con người. Đó là niềm tin cố hữu rằng porn mang lại điều gì đó vô cùng quan trọng, và khi dừng xem porn, mình sẽ như tự tay vứt bỏ một thứ gì đó vô cùng quan trọng, rồi cuộc đời mình sẽ trở nên trống rỗng, hụt hẫng.</p>
+<p>Ta cần làm rõ điều này: Porn tạo ra một khoảng trống, chứ không hề lấp đầy khoảng trống.</p>
+<p>Cơ thể con người là cỗ máy tinh vi bậc nhất trên hành tinh này. Dù bạn tin vào thuyết sáng tạo, chọn lọc tự nhiên, hay sự kết hợp của cả hai, thì cũng khó mà phủ nhận rằng cơ thể ta vượt xa mọi thành tựu của loài người. Chúng ta còn chẳng tạo nổi một tế bào sống đơn giản nhất, chưa nói đến những điều kỳ diệu như thị giác, chức năng sinh sản, hay hàng loạt hệ thống phức tạp đan xen trong cơ thể và bộ não. Nếu “người thiết kế” hay tiến trình tiến hóa thực sự muốn chúng ta tiếp xúc với những kích thích siêu thường, thì hẳn đã thiết kế một hệ thống thưởng-phạt khác rồi. Cơ thể chúng ta được trang bị những thiết bị cảnh báo an toàn và chúng ta sẽ phải trả giá nếu phớt lờ những cảnh báo ấy.</p>
+<h2 id="không-có-gì-phải-từ-bỏ"><a class="header" href="#không-có-gì-phải-từ-bỏ">Không có gì phải từ bỏ</a></h2>
+<p>Khi bạn trục xuất được con tiểu quỷ (cảm giác thèm) ra khỏi cơ thể, và con đại quỷ (sự tẩy não) ra khỏi tâm trí, bạn sẽ không còn ham muốn thủ dâm thường xuyên hay tìm đến porn để giải tỏa nữa. Vấn đề với nghiện porn là có quá nhiều điều ta chưa hiểu rõ, và đáng buồn là nhiều người trong giới y khoa thậm chí còn không xem xét đến khả năng một người có thể nghiện porn. Hàng loạt triệu chứng rõ ràng lại bị gán nhầm cho những nguyên nhân khác. Không phải người nghiện là kẻ đần – họ chỉ đang khổ sở khi không có porn mà thôi. Như thể đang bị kẹt giữa hai ngả: hoặc là nhịn porn rồi buồn khổ vì thiếu nó, hoặc là xem tiếp rồi thấy tội lỗi, chán ghét chính mình. Khi cơ thể bắt đầu báo động – đau lưng dưới, rối loạn tình dục – đầu óc họ cũng bắt đầu giằng xé: một bên muốn đối diện sự thật, một bên lại chỉ muốn quay mặt làm ngơ.</p>
+<p>Lại nói về người nghiện thuốc lá: Chúng ta đều đã thấy người nghiện tìm cớ để trốn đi hút trộm một điếu, và đó chính là lúc cơn nghiện bộc lộ rõ nhất. Những người nghiện không hút thuốc vì họ cảm thấy vui khi hút, mà vì họ cảm thấy khổ sở khi không được hút.</p>
+<p>Với nhiều người, lần đầu trải nghiệm tình dục đã kết thúc bằng cực khoái, khiến họ nghĩ lầm rằng thiếu cực khoái thì không thể tận hưởng tình dục. Với đàn ông, porn còn được quảng cáo như "bùa hộ mệnh" cho chuyện yêu, thậm chí là kim chỉ nam để tự tin hơn khi làm tình. Thực tế, là bịp cả. Porn chỉ khiến đời sống tình dục thêm bết bát mà thôi.</p>
+<p>Chẳng những không mất gì, bạn còn nhận lại vô vàn lợi ích. Khi người nghiện nghĩ đến chuyện dừng xem porn, họ thường chỉ tập trung vào sức khỏe thể chất và sinh lực. Những lý do đó rất chính đáng, nhưng theo tôi, lợi ích lớn nhất nằm ở khía cạnh tinh thần:</p>
+<ul>
+<li>Có lại sự tự tin và lòng can đảm.</li>
+<li>Sự tự do khỏi cảnh nô lệ.</li>
+<li>Không còn những bóng đen tồi tệ ám ảnh trong tâm trí và cảm giác ghê tởm chính bản thân mình nữa.</li>
+</ul>
+<h2 id="trống-rỗng"><a class="header" href="#trống-rỗng">Trống rỗng</a></h2>
+<p>Hãy thử tưởng tượng bạn bị nổi mụn trên mặt. Bạn đến hiệu thuốc, và dược sĩ đưa cho bạn tuýp thuốc mỡ dùng thử miễn phí. Bạn bôi thuốc, và mụn biến mất ngay lập tức. Một tuần sau, mụn tái phát. Bạn quay lại hiệu thuốc, hỏi xin thêm thuốc. Dược sĩ đáp: "Chắc chắn rồi, cứ cầm lấy tuýp này, có thể cháu sẽ cần đến."</p>
+<p>Bạn bôi thuốc và kì diệu thay, mụn lại biến mất. Nhưng mỗi lần mụn tái phát, nó lại to hơn và đau hơn, khoảng thời gian tái phát cũng ngắn lại. Cuối cùng, mụn lan ra khắp mặt và đau khủng khiếp, nó tái phát mỗi nửa giờ. Bạn biết thuốc mỡ sẽ tạm thời loại bỏ nó, nhưng bạn rất lo lắng. Liệu mụn có lan ra khắp cơ thể không? Liệu rồi nó có tái phát liên tục, không ngừng luôn không? Bạn đến bác sĩ và họ không thể chữa khỏi, bạn thử những cách khác nhưng không có gì hiệu quả ngoài thuốc mỡ.</p>
+<p>Lúc này, bạn hoàn toàn phụ thuộc vào thuốc mỡ, không bao giờ ra ngoài mà không đảm bảo có một tuýp thuốc bên mình. Nếu bạn đi nước ngoài, bạn phải mang theo vài tuýp. Ngoài nỗi lo về sức khỏe, dược sĩ còn tính phí bạn 2 triệu một tuýp. Bạn không còn lựa chọn nào khác ngoài việc trả tiền.</p>
+<p>Bạn tình cờ đọc được một bài báo bàn về vấn đề này và phát hiện ra nó không chỉ xảy ra với bạn, nhiều người cũng đang mắc phải vấn đề tương tự. Trên thực tế, cộng đồng y tế đã phát hiện ra rằng thuốc mỡ không thực sự chữa khỏi vết loét, thay vào đó chỉ đưa nó vào bên dưới bề mặt da. Thuốc mỡ là nguyên nhân khiến vết loét thêm trầm trọng, vì vậy tất cả những gì bạn phải làm để hết đau là ngừng sử dụng thuốc mỡ và nó sẽ tự biến mất.</p>
+<p>Bạn có tiếp tục sử dụng thuốc mỡ không? Có cần phải sử dụng ý chí của bản thân để không sử dụng thuốc mỡ không? Nếu bạn không tin vào bài báo, có thể bạn sẽ cảm thấy lo lắng trong một vài ngày, nhưng khi bạn nhận ra vết đau bắt đầu thuyên giảm, bạn sẽ không còn muốn hay cần sử dụng thuốc mỡ nữa. Bạn đã gặp phải một vấn đề khủng khiếp mà bạn nghĩ là không thể chữa khỏi nhưng bây giờ bạn đã tìm ra giải pháp. Ngay cả khi phải mất một năm để vết loét biến mất, mỗi ngày nó lành lại, bạn sẽ càng cảm thấy thoải mái và hạnh phúc. Đây là cảm giác kỳ diệu của việc thoát được khỏi Porn.</p>
+<p>Nỗi đau ở đây không chỉ giới hạn ở thể xác: những cơn đau nhức cơ thể, sự suy giảm ham muốn, kích thích chai sạn, những cuộc "yêu" nhạt nhẽo, sự lãng phí thời gian vào những hình ảnh vô hồn trên màn hình, nỗi nhục nhã khi bị người khác bắt gặp, hay tệ hơn, sự tự khinh miệt bản thân... Tất cả những điều đó cộng hưởng, nhân lên gấp bội nỗi thống khổ trong bạn.</p>
+<p>Chính nỗi đau này khiến ta khóa chặt tâm trí, không dám đối diện với sự thật. Đó là cảm giác hoảng loạn, thôi thúc phải thỏa mãn cơn nghiện. Người không nghiện sẽ không bao giờ trải qua cảm giác này. Điều tồi tệ nhất mà ta phải gánh chịu chính là nỗi sợ hãi. Và phần thưởng lớn nhất, chính là giải thoát khỏi nỗi sợ hãi đó. Nỗi sợ ấy bắt nguồn từ lần đầu bạn xem porn và thủ dâm, rồi lớn dần lên theo từng lần bạn tái nghiện.</p>
+<p>Vẫn có những người nghiện "hạnh phúc", để bản thân bị lừa bởi những lời ngon ngọt của con tiểu quỷ xảo quyệt. Vậy nên, ngay cả khi đang chìm trong địa ngục trần gian, họ vẫn cố tìm đủ mọi lý lẽ ngụy biện để biện minh cho sự mù quáng của mình.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="06.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="08.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="06.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="08.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

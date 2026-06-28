@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Thời điểm (Timing) - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="thời-điểm-timing"><a class="header" href="#thời-điểm-timing">Thời điểm (Timing)</a></h1>
+<p>Ngoài điều hiển nhiên là việc xem porn chẳng mang lại lợi ích gì cho bạn và rõ ràng bây giờ là thời điểm thích hợp để dừng lại, thì việc chọn đúng thời điểm thực sự rất quan trọng.</p>
+<p>Xã hội coi porn như một thói quen vô thưởng vô phạt hoặc <em>chỉ hơi khó chịu</em>. Đây là một quan niệm hoàn toàn sai lầm. Porn chẳng khác gì nghiện ma túy, một căn bệnh nguy hiểm, và là mầm mống hủy hoại các mối quan hệ xã hội. Điều tồi tệ nhất mà hầu hết người nghiện gặp phải trong đời chính là rơi vào cái vòng nghiện ngập khủng khiếp này. Nếu họ tiếp tục lún sâu, những hậu quả khôn lường sẽ xảy đến.</p>
+<p>Trong nhiều năm, giới y học đã lầm tưởng porn là vô hại, bởi họ không nhận ra sự khác biệt giữa static porn "lành tính" thời xưa và trải nghiệm thực tế ảo tân tiến ngày nay. Vấn đề nằm ở chỗ, dù tất cả người nghiện đều xem porn chỉ để thỏa mãn cơn thèm dopamine do chính porn tạo ra, thì cái trói buộc họ không phải là sự nghiện về thể chất, mà chính là sự tẩy não do việc nghiện porn gây ra. Một người thông minh cũng có thể sẽ bị mắc bẫy, nhưng chỉ có mấy đứa ngu mới tiếp tục mắc bẫy khi đã nhận ra được mánh khóe của cái bẫy. May mắn thay, phần lớn người nghiện không phải là mấy đứa ngu, họ chỉ nghĩ rằng mình ngu khi nghiện porn thôi. Mỗi người nghiện lại bị tẩy não theo một kiểu khác nhau. Đó là lý do vì sao chúng ta thấy dường như có vô vàn kiểu người nghiện, và bí ẩn này ngày càng khó giải đáp.</p>
+<p>Trong khi mục đích chính của cuốn sách gốc là giúp cai thuốc lá (một trong những chất gây nghiện mạnh nhất và gây nghiện nhanh nhất mà con người biết), thật đáng ngạc nhiên khi triết lý cốt lõi của nó vẫn hiệu quả khi áp dụng để dừng xem porn.</p>
+<blockquote>
+<p>"Nhiều người từng nói với tôi: 'Ông nói, "Hãy cứ tiếp tục hút thuốc cho đến khi đọc xong cuốn sách." Điều này có xu hướng khiến người hút thuốc mất nhiều thời gian để đọc cuốn sách hoặc đơn giản là không đọc xong nó. Chấm hết. Do đó, ông nên thay đổi hướng dẫn.' Điều này nghe có vẻ hợp lý, nhưng tôi biết nếu hướng dẫn là: 'Hãy dừng lại ngay lập tức', một số người hút thuốc thậm chí sẽ không bắt đầu đọc cuốn sách. Có một người hút thuốc đã đến xin tôi tư vấn trong những ngày đầu. Anh ta nói, 'Tôi thực sự bực bội vì phải tìm kiếm sự giúp đỡ của ông, tôi biết mình là người có ý chí mạnh mẽ. Trong mọi lĩnh vực khác của cuộc sống, tôi đều kiểm soát được. Tại sao tất cả những người hút thuốc khác lại cai thuốc bằng cách sử dụng ý chí của chính họ, trong khi tôi lại phải đến tìm ông?' Anh ta tiếp tục, 'Tôi nghĩ mình có thể tự mình làm được, nếu tôi có thể hút thuốc trong khi đang làm điều đó'"</p>
+</blockquote>
+<p>Xã hội tin rằng cai thuốc lá là vô cùng khó khăn, vậy một người hút thuốc cần gì khi gặp khó khăn? Chính là anh bạn nhỏ của chúng ta, một điếu thuốc, một điểm tựa tinh thần. Việc cai thuốc lá trông như một pha đòn đôi: không chỉ bản thân nhiệm vụ cai thuốc đã khó khăn, mà ngay cả chỗ dựa tinh thần mà ta thường tìm đến trong những lúc như vậy cũng không còn. Có lẽ, điểm hay của phương pháp này là bạn không cần phải "từ bỏ" trong suốt quá trình cai. Thay vào đó, chúng ta sẽ loại bỏ tận gốc mọi nỗi sợ hãi và nghi ngờ, để khi kết thúc lần xem porn cuối cùng, bạn đã không còn phải sống trong kiếp nô lệ nữa. Do đó, cuốn sách được viết lại này sẽ giữ nguyên lời khuyên đó của Allen Carr.</p>
+<p>Hãy nhớ rằng, <em>bạn không phải từ bỏ bất kì điều gì</em>. Ngược lại, bạn sắp nhận được những lợi ích không gì có thể đong đếm.</p>
+<p>Quay lại về "Thời điểm". Đầu tiên, chúng ta cần chuẩn bị trước và trong khoảng thời gian ba tuần tới, cố gắng dự đoán bất kỳ sự kiện nào có thể kích hoạt <em>ảo tưởng</em> hay <em>thói quen cũ</em> (Những lúc rảnh rỗi, bạn đời đi vắng, v.v., đừng cảm thấy nản lòng vì điều này, miễn là bạn dự đoán được chúng trước và không cảm thấy thiếu thốn). Đừng cố gắng cắt giảm trong thời gian này (Chương 12). Bạn chưa cần bỏ, chỉ cần chú ý đến sự thất vọng khi bội thực, những kỳ vọng tan vỡ, bất kỳ cơn đau thể xác nào, các triệu chứng cai nghiện, sự cáu kỉnh và u sầu. Hãy hình dung cảm giác tuyệt vời khi bạn không còn phải chịu đựng những điều này nữa.</p>
+<p>Vậy thì, khi nào bạn sẽ bắt đầu thực hiện khoảng thời gian 3 tuần đấy? Với khá nhiều người nghiện, khi họ vẫn còn coi porn là thứ giúp họ "xả hơi", "xả stress", giúp tận hưởng và khiến cuộc sống bớt nhàm chán, thì họ sẽ chọn những lúc mình thư giãn, thoải mái, nhưng khi đó thì những lý do để thoát nghiện porn sẽ chẳng còn. Bất kỳ lúc nào bạn đang sống — dù căng thẳng hay rảnh rỗi — thì cơ chế nghiện vẫn giống hệt nhau. Ngay cả trong những hoàn cảnh mà bạn từng nghĩ là "cần porn nhất", thực tế là chẳng có gì thay đổi ngoài việc cái <em>điểm tựa giả</em> không còn được dùng nữa. Nhưng nếu đó là lời khuyên, liệu bạn có thực sự làm theo không?</p>
+<p>Đây là một phép so sánh nhỏ. Tôi và thằng em dự định đi bơi. Chúng tôi đến bể bơi cùng lúc, nhưng hiếm khi bơi cùng nhau. Số là, nó chỉ dám nhúng ngón chân xuống nước, rồi nửa tiếng sau mới chịu xuống bơi. Quá chậm. Tôi biết trước rằng sớm muộn gì, dù nước có lạnh đến đâu, tôi cũng phải nhảy xuống thôi. Vậy nên, tôi đã học được cách cho xong chuyện: nhảy thẳng xuống luôn. Thử tưởng tượng, nếu tôi nhất quyết bắt nó phải "nhảy ùm xuống nước thì mới được bơi", chắc chắn nó sẽ chẳng bao giờ xuống nước.</p>
+<p>Từ phép so sánh nhỏ trên, tôi đã nghĩ ra ý tưởng kiểu như thế này: <em>"Thời điểm vô cùng quan trọng, và chương sau sẽ cho bạn biết thời điểm nào là tốt nhất để dừng xem porn."</em> Nhưng trang tiếp theo chỉ có độc một chữ: <em>"NGAY BÂY GIỜ!"</em> to tướng. Đó mới thực sự là lời khuyên chí lý, nhưng liệu bạn có làm theo không? Có lẽ, "chiêu" tinh vi nhất của cái bẫy này là ở chỗ: khi cuộc sống bủa vây ta bằng những căng thẳng thực sự, ta nghĩ đây không phải lúc thích hợp để dừng xem porn; nhưng đến khi cuộc sống êm đềm, thảnh thơi, ta lại chẳng buồn nghĩ đến chuyện thoát khỏi cơn nghiện đó nữa.</p>
+<ol>
+<li>
+<p>Khi mới bắt đầu xem porn, bạn có thực sự quyết định rằng bạn sẽ tiếp tục phụ thuộc vào nó trong suốt quãng đời còn lại mà không bao giờ có thể dừng lại được không? <em><strong>Tất nhiên là không rồi</strong></em></p>
+</li>
+<li>
+<p>Bạn có định tiếp tục phần đời còn lại của mình mà không bao giờ có thể dừng lại được không? <em><strong>Tất nhiên là không rồi</strong></em></p>
+</li>
+</ol>
+<p>Vậy khi nào bạn sẽ dừng lại? Ngày mai? Năm sau? Năm sau nữa? Chẳng phải đó là điều bạn đã tự hỏi mình kể từ khi bạn nhận ra mình đã nghiện rồi sao? Bạn có đang hy vọng rằng một buổi sáng nào đó bạn sẽ thức dậy và không còn muốn xem nữa không? Đừng có xàm nữa, với bất kỳ chứng nghiện nào bạn cũng sẽ ngày càng nghiện nặng hơn, chứ không phải ít đi. Bạn có định đợi cho đến khi bạn thực sự bắt đầu cảm thấy rằng việc ra khỏi giường còn khó hơn cả việc thủ dâm không? Điều đó sẽ hơi bị vô nghĩa đấy.</p>
+<p>Cạm bẫy chết người chính là niềm tin sai lầm rằng bây giờ không phải lúc thích hợp - ngày mai sẽ luôn dễ dàng hơn. Chúng ta tự huyễn hoặc rằng mình đang sống một cuộc sống đầy căng thẳng, nhưng thực tế không phải vậy. Hầu hết những căng thẳng tột độ đã biến mất khỏi cuộc sống hiện đại. Khi bước chân ra khỏi nhà, bạn đâu còn phải sống trong nơm nớp lo sợ thú dữ tấn công; phần lớn chúng ta cũng chẳng phải đau đầu nghĩ xem cần kiếm bữa ăn tiếp theo ở đâu, hay đêm nay có chỗ ở hay không. Hãy nhìn xem loài thỏ mà xem, mỗi lần rời hang là đối mặt với hàng tá thú săn mồi trong rừng rậm. Nhưng thỏ vẫn sống nhăn, chúng có adrenaline và hormone hỗ trợ, và chúng ta cũng vậy thôi. Sự thật là, những giai đoạn căng thẳng nhất trong cuộc đời của bất kì ai là thời thơ ấu và tuổi niên thiếu. Nhưng ba tỷ năm chọn lọc tự nhiên đã trang bị cho chúng ta khả năng đối phó với căng thẳng, và nhiều người lớn lên trong những tuổi thơ khó khăn vẫn có một cuộc sống bình thường.</p>
+<blockquote>
+<p><em>"Một thân thể không đau, một tinh thần không loạn, đó là chân hạnh phúc của con người"</em></p>
+<p>Thu Giang - Nguyễn Duy Cần</p>
+</blockquote>
+<p>Khi bạn cảm thấy khỏe mạnh về thể chất và tinh thần, bạn có thể tận hưởng những thăng trầm trong cuộc đời. Nhiều người nhầm giữa trách nhiệm với căng thẳng; trách nhiệm chỉ trở nên căng thẳng khi chúng ta không cảm thấy đủ mạnh mẽ để xử lý nó. Điều hủy hoại hầu hết cuộc đời của những người nghiện không phải là căng thẳng, công việc hay tuổi già, mà là những chỗ dựa tinh thần ảo tưởng, dối trá mà họ tìm đến.</p>
+<p>Hãy nhìn nhận vấn đề theo hướng này: bạn đã quyết tâm không để bản thân mắc kẹt trong cái bẫy này đến hết đời. Vậy nên, sớm muộn gì - dù dễ hay khó - bạn cũng phải vùng lên để thoát khỏi nó. Porn không phải thói quen hay thú vui, nó là ma túy, là tệ nạn nghiện ngập. Chúng ta đều hiểu rằng việc dừng xem porn sẽ không hề dễ dàng hơn vào ngày mai, mà ngược lại, càng ngày càng khó khăn hơn. Vậy nên, thời điểm để dứt bỏ nó chính là ngay bây giờ - hoặc càng sớm càng tốt. Hãy ngẫm xem một tuần trôi qua nhanh đến mức nào. Chỉ cần vậy thôi. Hãy hình dung cuộc sống tuyệt vời biết bao khi bạn được tận hưởng trọn vẹn phần đời còn lại, thay vì vùi mình trong bóng tối nghiện ngập. Chỉ cần bạn làm theo mọi hướng dẫn, bạn thậm chí không cần phải đợi năm ngày hay ba tuần. Bạn không chỉ thấy việc dừng xem porn thật dễ dàng, mà còn <strong>thực sự tận hưởng quá trình tự giải phóng này</strong>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="16.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="18.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="16.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="18.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Các khía cạnh của sự tẩy não - Thoát porn luận</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Thoát porn luận</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="các-khía-cạnh-của-sự-tẩy-não"><a class="header" href="#các-khía-cạnh-của-sự-tẩy-não">Các khía cạnh của sự tẩy não</a></h1>
+<p>Con đại quỷ của cạm bẫy porn được hình thành từ nhiều yếu tố, không phải tự nhiên mà có — nó được nuôi lớn dần bởi đủ thứ yếu tố: áp lực xã hội, hình ảnh trên truyền thông, lời rủ rê từ bạn bè, cũng như những độc thoại nội tâm của chính người nghiện. Nếu bạn chỉ dùng ý chí để chống lại mà không bóc tách được những ảo tưởng quanh porn, người nghiện dễ rơi vào thất vọng và tái nghiện. Việc tháo gỡ giá trị tưởng tượng mà bạn gán cho porn và nhìn rõ những gì mình đang đánh mất là điều cần thiết để thoát ra khỏi cơn nghiện ấy.</p>
+<p>Một điểm quan trọng cần lưu ý là mối liên hệ giữa sự tẩy não và nỗi sợ. Chính nỗi sợ về những cơn đau cai nghiện (withdrawal pangs) trong tương lai là <em>cơn đau cai nghiện</em>. Nỗi sợ chính là <em>cơn đau cai nghiện</em> khi dừng xem porn lại. Hãy nhớ lại những triệu chứng cai nghiện như đổ mồ hôi tay, hụt hơi, mất ngủ và đầu óc không tỉnh táo. Và bây giờ, hãy nghĩ về những tình huống tương tự khiến bạn có những cảm giác đó: phỏng vấn, hồi hộp khi gặp người mình thích, thuyết trình trước đám đông, v.v.. Đây chính là những cảm giác lo lắng do nỗi sợ hãi gây ra. Nói đơn giản: nếu đó là một chất gây nghiện về thể chất, sao người ta vẫn còn bị nó ám ảnh sau cả hàng tháng trời? Vậy thì rõ ràng, thứ khiến bạn dính vào không phải là thể chất, mà là tâm trí — phải không?</p>
+<h2 id="căng-thẳng"><a class="header" href="#căng-thẳng">Căng thẳng</a></h2>
+<p>Không chỉ những bi kịch lớn trong cuộc sống mà ngay cả những căng thẳng nhỏ cũng có thể đẩy người nghiện vào vùng không an toàn. Căng thẳng có thể đến từ giao tiếp xã hội, các cuộc gọi điện thoại, sự lo lắng của người nội trợ có con nhỏ và nhiều vấn đề khác. Hãy lấy ví dụ về cuộc gọi điện thoại, đặc biệt đối với một doanh nhân. Hầu hết các cuộc gọi không phải từ khách hàng hài lòng hay sếp chúc mừng, mà thường mang đến tin tức không mấy vui vẻ. Khi trở về nhà với cuộc sống gia đình, tiếng la hét của con cái và những đòi hỏi tình cảm từ bạn đời có thể khiến người nghiện – nếu chưa từng – bắt đầu nghĩ đến việc giải tỏa căng thẳng bằng porn vào buổi tối. Chính những cơn đau do thiếu hụt dopamine và những yếu tố bất ổn này đã bào mòn sức lực và khiến cơn nghiện trở nên trầm trọng hơn. Giảm bớt một phần cảm giác thèm và căng thẳng, người nghiện sẽ có cảm giác khoái cảm tạm thời. Sự giải tỏa đó không phải là ảo tưởng, người nghiện thực sự cảm thấy tốt hơn ngay tức thì, nhưng về lâu dài, họ sẽ trở nên căng thẳng hơn so với người bình thường không nghiện porn.</p>
+<p>Ví dụ sau đây không nhằm mục đích gây sốc mà để nhấn mạnh rằng porn phá hủy hệ thần kinh hơn là giúp nó thư giãn.</p>
+<p>Hãy thử tưởng tượng đến một giai đoạn mà bạn không còn cảm thấy bị kích thích, ngay cả với một người bạn tình rất gợi cảm và hấp dẫn. Hãy dừng xem porn lại một thời gian và hình dung cuộc sống mà trong đó một người yêu bạn, rất đáng yêu và quyến rũ phải cạnh tranh và thất bại trước những ngôi sao porn ảo để thu hút sự chú ý của bạn. Hãy tưởng tượng trạng thái tinh thần của một người, khi nhận ra điều này, vẫn tiếp tục xem porn cho đến chết mà không quan hệ tình dục với người bạn tình ấy. Nghe thì ảo nhưng những câu chuyện như thế này không phải là hiếm. Đây chính là mặt trái đáng sợ mà thứ <em>thuốc phiện</em> porn gây ra cho bộ não của bạn. Bạn càng nghiện lâu, bạn càng trở nên hèn nhát và càng ảo tưởng rằng porn mang lại tác dụng ngược lại.</p>
+<p>Bạn đã bao giờ hoảng sợ khi WiFi ngừng hoạt động hoặc quá lag? Người không xem porn không phải chịu cảm giác đấy, bởi porn chính là nguyên nhân. Dần dà, porn ăn mòn hệ thần kinh, kích thích DeltaFosB tạo ra những đường mòn vững chắc mang tên porn trong não bộ, từng bước tước đoạt khả năng tự chủ của bạn. Để rồi, những người nghiện porn mắc kẹt trong ảo tưởng rằng porn là bạn tình mới và không thể sống thiếu nó.</p>
+<p><em>Porn không làm bạn bớt căng thẳng, mà nó đang dần phá hủy sự bình yên trong cuộc sống của bạn.</em> Một trong những lợi ích to lớn của việc thoát nghiện là sự trở lại của sự tự tin và bình yên trong bạn.</p>
+<p>Bạn không cần phải tự đánh giá bản thân dựa trên khả năng làm thỏa mãn đối tác. Bạn sẽ không thể tự do nếu bạn tiếp tục tự thỏa mãn theo những cách làm giảm hạnh phúc và ham muốn tình dục thông qua việc lặp đi lặp lại những hành vi tự hủy.</p>
+<h2 id="chán"><a class="header" href="#chán">Chán</a></h2>
+<p>Nếu bạn giống như nhiều người khác, ngay khi vừa lên giường, bạn đã truy cập trang phim đen quen thuộc của mình, như thể một bản năng vậy. Tương tự, việc porn xua tan sự buồn chán cũng là một ngụy biện khác, bởi vì buồn chán là một trạng thái tinh thần, thường xảy ra khi bạn đã kiêng porn trong một thời gian dài hoặc đang cố gắng cắt giảm việc sử dụng.</p>
+<p>Tình hình thực tế là như thế này: khi bạn nghiện sức hút siêu thường (supernormal pull) của porn trên mạng và sau đó cố cai, bạn sẽ có cảm giác trống trải. Nếu bạn có việc gì đó để lấp đầy tâm trí mà không gây căng thẳng, bạn có thể trải qua những khoảng thời gian dài mà không bị sự "thiếu vắng ma túy" này làm phiền. Tuy nhiên, khi bạn buồn chán và không có gì khiến bạn xao nhãng, bạn lại tìm đến con tiểu quỷ để nuôi nó. Khi bạn đang nuông chiều bản thân và không cố gắng cai hoặc cắt giảm, ngay cả việc bật chế độ ẩn danh cũng trở nên vô thức. Nghi thức này diễn ra hoàn toàn tự động; nếu người nghiện cố gắng nhớ lại những lần xem porn trong tuần qua, họ chỉ có thể nhớ được một phần nhỏ trong số đó, như lần gần đây nhất hoặc lần sau một thời gian dài thoát nghiện.</p>
+<p>Sự thật là porn gián tiếp gia tăng sự buồn chán vì quay tay xong sẽ khiến bạn cảm thấy uể oải. Thay vì tham gia một hoạt động tràn đầy năng lượng, người nghiện có xu hướng nằm dài, buồn chán và xoa dịu những cơn vật vã của mình. Chống lại sự tẩy não là rất quan trọng vì người nghiện có xu hướng xem porn khi chán, não bộ của chúng ta đã bị lập trình để diễn giải porn là thứ <em>thú vị</em>. Việc gỡ bỏ sự tẩy não là rất quan trọng, vì hầu hết người nghiện tìm đến porn mỗi khi thấy chán. Não ta đã bị lập trình để coi porn là thứ “kích thích, thú vị”. Tương tự, chúng ta còn bị nhồi nhét ý tưởng rằng tình dục — dù là tệ hại — cũng giúp thư giãn. Thực tế thì, khi buồn hay stress, nhiều cặp đôi muốn <em>làm chuyện ấy</em>. Nhưng nếu không phân biệt được giữa tình dục để kết nối tâm hồn (tâm) và tình dục kiểu bản năng (để xuất tinh/đạt cực khoái), hãy để ý xem bạn muốn nhanh chóng rời khỏi người kia đến mức nào sau khi đạt được cực khoái "bắt buộc" (Có thể hiểu là bạn đang thủ dâm bằng cơ thể của người khác giới). Nếu cặp đôi chỉ đơn giản quyết định ôm nhau, trò chuyện hoặc âu yếm và đi ngủ, họ có thể cảm thấy nhẹ nhõm hơn nhiều.</p>
+<h2 id="tập-trung"><a class="header" href="#tập-trung">Tập trung</a></h2>
+<p>Thủ dâm hay quan hệ tình dục chẳng giúp bạn tập trung hơn — vì khi cần tập trung, bản năng tự nhiên là tránh xa những thứ gây xao nhãng. Vậy mà, người nghiện porn lại làm ngược lại: mỗi khi cần tập trung, họ vô thức mở trình duyệt, cho con tiểu quỷ ăn một chút để xoa dịu cơn thèm, rồi quay lại với công việc dang dở. Mọi chuyện diễn ra nhanh đến mức họ còn chẳng ý thức được là mình vừa xem porn. Nhưng hậu quả thì tích tụ từng ngày. Sau nhiều năm ngập trong dopamine do porn mang lại, não bộ bị biến đổi. Bạn sẽ thấy khó khăn hơn trong việc nhớ thông tin, lên kế hoạch, hay kiểm soát các hành vi bốc đồng.</p>
+<p>Bạn cũng bị thôi thúc phải tìm kiếm sự mới lạ cho lần xem tiếp theo vì những thứ cũ không còn tạo ra đủ dopamine và opioid nữa. Vì vậy, bạn sẽ phải lang thang trên mạng để tìm kiếm sự mới lạ, chống lại thôi thúc vượt qua ranh giới hướng tới những nội dung gây sốc. Để rồi lại khiến bạn thêm căng thẳng và cảm thấy trống rỗng sau khi kết thúc.</p>
+<p>Khả năng tập trung cũng bị ảnh hưởng tiêu cực vì não đã quen với những cú “sốc dopamine” quá lớn từ porn, khiến các thụ thể dopamine bị bào mòn. Kết quả là não không còn phản ứng với những cú “nhích nhẹ” dopamine từ các hoạt động lành mạnh khác như vận động, thiền hay đọc sách. Nhưng khi bạn thoát khỏi vòng lặp đó, khả năng tập trung và cảm hứng sẽ dần trở lại — mạnh mẽ hơn bạn tưởng. Với nhiều người, chính việc mất tập trung là rào cản khiến họ thất bại khi cố ép bản thân dừng xem porn lại bằng ý chí. Họ chịu được sự bứt rứt, cáu gắt, nhưng khi cần làm việc khó mà lại không thể tập trung như trước, họ vỡ vụn.</p>
+<p>Nhưng sự mất tập trung đó không phải vì bạn thiếu sex, càng không phải vì thiếu porn. Bạn gặp phải những rào cản tinh thần khi bạn nghiện một thứ gì đó, và khi bạn gặp phải rào cản tinh thần, bạn sẽ làm gì? Mở trình duyệt, truy cập vào trang phim đen <em>thân thuộc</em> — dù việc đó chẳng giúp giải quyết vấn đề gì. Rồi bạn lại quay về làm việc, giống như người chưa từng nghiện vẫn làm hằng ngày.</p>
+<p>Khi bạn còn là người nghiện, bạn chẳng bao giờ đổ lỗi cho nguyên nhân thật sự. Bạn không bao giờ nghĩ mình đang bị rối loạn chức năng tình dục — chỉ "hơi xuống phong độ" thôi. Khoảnh khắc bạn ngừng xem porn, mọi thứ trở nên tồi tệ đều bị đổ lỗi cho lý do bạn đã dừng lại. Giờ đây, khi bạn gặp phải một rào cản tinh thần, thay vì tiếp tục vượt qua nó, bạn bắt đầu tự nhủ: "<em>Đ. mẹ tao muốn xem porn ngay bây giờ</em>". Sau đó, bạn bắt đầu nghi ngờ quyết định thoát nghiện &amp; thoát khỏi cảnh nô lệ của mình.</p>
+<p>Nếu bạn tin rằng porn giúp bạn tập trung, thì chỉ cần lo lắng về việc mất đi nó cũng đủ khiến bạn mât tập trung. Chính sự nghi ngờ, chứ không phải những cơn đau cai nghiện về mặt thể chất, mới gây ra vấn đề. Hãy luôn nhớ rằng, chính người nghiện porn mới phải chịu đựng những cơn vật vã, chứ không phải những người không xem porn.</p>
+<h2 id="thư-giãn"><a class="header" href="#thư-giãn">Thư giãn</a></h2>
+<p>Hầu hết người nghiện đều nghĩ rằng porn giúp họ thư giãn. Không hề. Việc cuống cuồng tìm kiếm bộ phim đen thích hợp trên mạng và cuộc đấu tranh nội tâm khi cố gắng vượt qua vạch đỏ chắc chắn <em>không</em> phải là một hoạt động thư giãn.</p>
+<p>Khi màn đêm buông xuống sau một chuyến đi xa hay một ngày dài mệt mỏi, người bình thường sẽ ngồi xuống, ăn uống, nghỉ ngơi và cảm thấy trọn vẹn. Nhưng người nghiện thì không—họ còn một cơn đói khác đang âm ỉ chờ được thoả mãn. Họ tưởng rằng porn là phần thưởng sau một ngày làm việc vất vả. Nhưng thực chất, đó chỉ là con tiểu quỷ đang kêu gào trong họ.</p>
+<p>Sự thật là: người nghiện sẽ không bao giờ thật sự thư giãn. Và nếu cứ tiếp tục như thế, cảm giác đó sẽ ngày một tồi tệ hơn. Như một người từng nghiện chia sẻ trên mạng:</p>
+<blockquote>
+<p>"Tôi đã từng tin rằng bên trong mình có một con quỷ dữ, một phần bản chất xấu xa nào đó. Giờ tôi mới hiểu: đúng là có quỷ thật, nhưng không phải là bản chất tôi có vấn đề — mà là con tiểu quỷ porn trên mạng đã tạo ra mọi rắc rối. Hồi đó tôi cứ tưởng mình đang gánh cả thế giới trên vai, nhưng giờ nhìn lại, tôi tự hỏi: thật ra mình căng thẳng vì cái gì? Trong mọi mặt khác của cuộc sống, tôi đều làm chủ được bản thân, chỉ riêng cái vòng nô lệ porn là điều duy nhất thao túng tôi. Điều khiến tôi buồn nhất là đến tận bây giờ, tôi vẫn không thể khiến các con mình hiểu rằng: chính vì nô lệ cho porn nên tôi mới cáu bẳn và khó chịu đến thế."</p>
+</blockquote>
+<p>Mỗi khi nghe những người nghiện porn cố gắng biện minh cho cơn nghiện của mình, thông điệp luôn là: "<em>Ồ, nó giúp tôi thư giãn.</em>" Hãy xem câu chuyện trực tuyến về một ông bố đơn thân, người đã từ chối để cậu con trai sáu tuổi chia sẻ giường ngủ vào ban đêm sau khi xem một bộ phim kinh dị, chỉ để ông có thể xem porn và "edging" hàng giờ liền.</p>
+<p>Tại sao một số người nghiện porn lại căng thẳng tột độ khi họ không được <em>nạp năng lượng</em>, ngay cả sau khi đã quan hệ tình dục thực sự? Một câu chuyện trực tuyến kể về một người đàn ông làm việc trong lĩnh vực quảng cáo có vô số cô nàng "9 và 10 điểm" sẵn sàng hẹn hò bất cứ lúc nào, nhưng lại mất hứng thú đưa họ đi ăn tối vì porn trên mạng dễ có hơn nhiều, không tốn tiền nhà hàng và không có khả năng bị bạn hẹn từ chối vào cuối buổi tối. Tại sao phải bận tâm khi con tiểu quỷ liên tục thôi thúc anh tìm kiếm một thứ "ít rủi ro, lãi cao" ngay trong tầm tay khi về đến nhà?</p>
+<p>Vậy tại sao người không xem porn lại có thể thư giãn hoàn toàn, còn người nghiện thì chỉ cần không “nạp liều” một hai ngày đã thấy bồn chồn không yên? Hãy đọc những chia sẻ của người từng thề dừng xem, bạn sẽ thấy họ vật lộn với cám dỗ như thế nào — rõ ràng chẳng hề thư giãn chút nào khi không còn được đụng tới <em>thú vui duy nhất</em> mà mình nghĩ là mình xứng đáng có được. Họ đã quên mất cảm giác thật sự thư thái là như thế nào. Porn giống như một cái bẫy ruồi của cây nắp ấm vậy. Ban đầu con ruồi tưởng đang thưởng thức mật ngọt, nhưng đến lúc nhận ra thì nó đã bị cây tiêu hóa từ bao giờ.</p>
+<p>Đã đến lúc bạn thoát ra khỏi cái bẫy đó chưa?</p>
+<h2 id="năng-lượng"><a class="header" href="#năng-lượng">Năng lượng</a></h2>
+<p>Hầu hết người nghiện đều nhận thức được tác động ngày càng tăng của sự mới lạ và leo thang của porn đối với hệ thống tình dục và cơ chế phần thưởng trong não bộ. Nhưng rất ít người nhận ra rằng porn cũng âm thầm bào mòn cả mức năng lượng sống của họ.</p>
+<p>Một trong những khía cạnh tinh vi của cạm bẫy porn là những tác động mà nó gây ra cho chúng ta cả về thể chất lẫn tinh thần. Chúng diễn ra dần dần và khó nhận thấy đến nỗi chúng ta không ý thức được và coi tình trạng thiếu năng lượng là bình thường. Ảnh hưởng này tương tự như thói quen ăn uống không lành mạnh. Hãy nhìn những người thừa cân quá mức và tự hỏi làm thế nào họ có thể để bản thân rơi vào trạng thái đó. Nhưng giả sử điều đó xảy ra chỉ sau một đêm – bạn đi ngủ với cơ bắp săn chắc và không chút mỡ thừa, rồi thức dậy thấy mình béo phì, nặng nề và bụng phệ. Thay vì thức dậy với cảm giác được nghỉ ngơi hoàn toàn và tràn đầy năng lượng, bạn lại cảm thấy đau khổ, lờ đờ và khó mở mắt.</p>
+<p>Bạn sẽ hoảng sợ, tự hỏi mình đã mắc phải căn bệnh khủng khiếp nào chỉ sau một đêm. Thực tế là bạn đã mất hai mươi năm để đến tình trạng đó. Porn cũng vậy. Nếu có thể ngay lập tức chuyển đổi tâm trí và cơ thể để bạn so sánh trực tiếp cảm giác của mình khi ngừng porn chỉ trong ba tuần, thì đó là tất cả những gì cần thiết để thuyết phục bạn. Hãy tự hỏi bạn có thực sự cảm thấy tốt hơn khi xem porn không, hay thực tế là bạn đã "chìm xuống đáy" đến mức nào rồi? Bạn sẽ không chỉ cảm thấy khỏe mạnh hơn với nhiều năng lượng hơn mà còn tạo ra sự tự tin và khả năng tập trung cao hơn đáng kể.</p>
+<p>Thiếu năng lượng, mệt mỏi và những vấn đề liên quan thường bị đổ lỗi cho tuổi già. Việc bạn bè và đồng nghiệp cũng có lối sống ít vận động càng làm tăng thêm mức độ "bình thường hóa" hành vi này. Niềm tin rằng năng lượng là đặc quyền riêng của trẻ em và thanh thiếu niên, và tuổi già bắt đầu ở độ tuổi đôi mươi là một triệu chứng khác của quá trình tẩy não. Và cũng bởi sự chai lì dopamine, ta dần quên luôn việc ăn uống, tập luyện ra sao mới lành mạnh.</p>
+<p>Một thời gian ngắn sau khi ngừng xem porn, cảm giác lờ đờ và uể oải sẽ biến mất. Vấn đề là thế này: khi còn xem porn, bạn đang liên tục tiêu hao năng lượng — giống như rút tiền từ tài khoản — và trong quá trình đó, bạn vô tình làm rối loạn cả hệ limbic trong não (hệ điều hành cảm xúc và động lực sống của bạn). Không giống như bỏ thuốc lá, nơi sức khỏe thể chất và tinh thần của bạn chỉ dần hồi phục, việc bỏ porn mang lại kết quả tuyệt vời ngay từ ngày đầu tiên. Việc tiêu diệt con tiểu quỷ và đóng sập những đường trượt dopamine trong não có thể mất chút thời gian, nhưng hành trình phục hồi trung tâm phần thưởng sẽ nhẹ nhàng hơn rất nhiều so với con dốc trượt dài bạn từng lăn xuống. Nếu bạn chọn con đường sử dụng ý chí, cố gồng mình vượt qua, thì những lợi ích về sức khỏe hay năng lượng cũng sẽ bị nhấn chìm bởi cơn trầm cảm bạn phải chịu đựng. Thật không may, EasyPeasy không thể truyền ngay kinh nghiệm ba tuần vào tâm trí bạn, nhưng bạn có thể. Theo bản năng, bạn biết rằng những gì bạn đang được mách bảo là đúng, tất cả những gì bạn cần làm là sử dụng trí tưởng tượng của mình.</p>
+<h3 id="những-buổi-xem-trước-khi-giao-lưu-gặp-gỡ"><a class="header" href="#những-buổi-xem-trước-khi-giao-lưu-gặp-gỡ">Những buổi “xem trước” khi giao lưu gặp gỡ</a></h3>
+<p>Đây là một lối suy nghĩ tưởng chừng hợp lý nhưng lại vô cùng sai lầm. Để kiểm soát cơn thèm ăn, có bao giờ bạn ăn trước ở nhà rồi mới đi nhà hàng hoặc dự tiệc không? Đó là những gì bạn đang làm khi xem porn và thủ dâm trước các buổi giao lưu gặp gỡ. Bạn mệt mỏi và không ở trạng thái tốt nhất. Sự phổ biến của các kỹ thuật tán tỉnh gây ra áp lực phải thể hiện và ghi điểm. Cố gắng giải tỏa căng thẳng bằng porn và chất kích thích chỉ làm cho vấn đề trở nên tồi tệ hơn về lâu dài. Cá nhân tôi thì thích một chút hồi hộp – nó giúp mình tỉnh táo, tập trung. Chứ xả kiệt năng lượng về thể chất lẫn tinh thần bằng một lần đạt cực khoái thì chẳng mang lại cái lợi gì cả.</p>
+<p>Việc xem porn trước khi ra ngoài thường đến từ sự kết hợp của nhiều lý do quen thuộc: căng thẳng, thèm cảm giác <em>sướng</em>, hoặc chỉ đơn giản là chán. Dù là đi chơi với bạn bè hay người lạ, trong các dịp xã giao luôn có chút áp lực — ta muốn được là chính mình, muốn cảm thấy thoải mái hoàn toàn, nhưng lại thường không làm được như thế. Có nhiều tình huống trong cuộc sống luôn đi kèm nhiều yếu tố cùng lúc. Lấy lái xe làm ví dụ: bạn không cần phải nhận ra, nhưng tiềm thức của bạn thì luôn biết rằng: “Cuộc sống mình đang đặt trên tay lái”. Đó là áp lực âm thầm, phải tập trung cao độ trong thời gian dài. Tương tự như vậy, khi bạn thấy mình bị kẹt xe hoặc chán chường trên đường cao tốc, thì ý nghĩ xem porn và thủ dâm khi về đến nhà có thể đã chiếm trọn tâm trí bạn.</p>
+<p>Một ví dụ khác là khi đi hẹn hò lần đầu. Bạn hồi hộp với bao suy nghĩ về người mình sắp gặp. Rồi đến khi gặp thật, nếu cảm xúc không như mong đợi, bạn bắt đầu thấy chán, thấy tội lỗi vì không “cảm được” người kia. Thế là cuộc giằng co nội tâm bắt đầu: “Mình muốn làm tình hoặc rời khỏi đây càng sớm càng tốt” — và thế là tâm trí bạn bắt đầu chuẩn bị cho một buổi xem porn sau buổi hẹn.</p>
+<p>Ngay cả khi buổi hẹn hò diễn ra suôn sẻ và vài giờ sau hai bạn đã về nhà cùng nhau, thì bất kể kết quả ra sao, bạn cũng sẽ không hài lòng nếu mục tiêu duy nhất của bạn chỉ là tìm kiếm cảm giác cực khoái. Vào những lúc khác, bạn lái xe về nhà một mình, suy nghĩ duy nhất của bạn là porn thay vì tự chúc mừng bản thân vì những nỗ lực của bản thân. Và có thể bạn đã đoán đúng: người trong tình cảnh đó sẽ bật máy lên ngay khi về đến nhà. Chính những đêm như vậy — khi tỉnh dậy thấy trống rỗng, bất an — là thứ ta tưởng sẽ <em>nhớ lắm</em> nếu dừng xem porn. Ta nghĩ rằng: “Chắc đời mình sẽ chẳng vui như trước nữa.” Nhưng không phải vậy đâu. Thực chất, những buổi “tự sướng” đó chỉ là cách để làm dịu cơn thèm porn. Và mỗi lần như thế, não bạn lại trượt thêm một đoạn nữa trên cái máng trượt dopamine.</p>
+<p>Cần nhớ là: không phải porn hay mấy “nàng hậu cung ảo” có gì đặc biệt — mà chính là vào <em>dịp đặc biệt</em>. Khi bạn thoát khỏi cơn nghiện porn, những dịp ấy sẽ trở nên thật hơn, vui hơn — và cả những lúc căng thẳng cũng sẽ nhẹ nhàng hơn rất nhiều.</p>
+<p><img src="images/trap-resolved.png" alt="Image - Removal of Brainwashing" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="05.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="07.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="05.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="07.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
