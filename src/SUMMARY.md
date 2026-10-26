@@ -1,6 +1,6 @@
 # Summary
 
-- [Thoát Porn Luận](index.md)
+- [Giới thiệu](index.md)
 - [Phương pháp dễ dàng](02.md)
 - [Vì sao bỏ porn lại khó đến vậy?](03.md)
 - [Bản năng](04.md)
@@ -35,4 +35,3 @@
 - [Tài nguyên](33.md)
 	- [Tái nghiện](phu-luc/tai-nghien.md)
 	- [Đối phó với nỗi sợ](phu-luc/doi-pho-voi-noi-so.md)
-    - [Thông tin thêm về sách & Chú giải](phu-luc/appendix.md)

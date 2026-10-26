@@ -1,5 +1,4 @@
 # Đối phó với nỗi sợ
-(Bản dịch được dịch bằng ChatGPT và chưa sửa)
 
 Thật mỉa mai khi nỗi sợ thất bại lại chính là thứ đảm bảo bạn sẽ thất bại. Còn nếu bạn không sợ, bạn sẽ chẳng bao giờ phải đối mặt với thất bại. Giống như việc sợ bị giết lại khiến bạn dễ bị giết hơn. Trong khi đó, về mặt logic, lý do tồn tại của nỗi sợ là để giúp ta tránh xa nguy hiểm. Nỗi sợ có thể cứu mạng bạn. Nếu bị rượt đuổi mà không sợ gì cả, bạn sẽ không chạy. Nếu không sợ chết, bạn sẽ chẳng làm gì để bảo vệ bản thân.
 

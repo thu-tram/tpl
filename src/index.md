@@ -1,6 +1,8 @@
 # Thoát Porn Luận
 
-<span style="font-size:xx-large;">KHÔNG BỎ QUA CHƯƠNG</span>
+<img src="images/easypeasy.png" alt="" style="width: 50%; height: auto;">
+
+## KHÔNG BỎ QUA CHƯƠNG
 
 Cuốn sách mã nguồn mở này sẽ giúp bạn dừng việc xem porn lại ngay lập tức, lâu dài mà không sử dụng đến ý chí hay có bất kì cảm giác thiếu thốn hay hi sinh nào. Không môt lời phán xét, dè bỉu hay áp lực phải trải qua những biện pháp hành xác nào cả.
 
@@ -126,12 +128,24 @@ Một số thuật ngữ:
 
 **Đừng đọc cuốn này như một cuốn sách bình thường**, nó rất ngắn, và bạn có thể đọc xong nó trong vòng vài giờ. Việc đánh dấu hoặc ghi chú, và **đọc lại** sẽ giúp củng cố kiến thức.
 
+Tại sao lại viết cuốn Hackbook này? Allen Carr đã qua đời từ lâu và tổ chức của ông không hề hỗ trợ điều trị cho hội chứng nghiện porn. 
+
+Trong suốt cuốn sách này, bản thân tôi, Hackauthor và Allen Carr sẽ ở đây để cung cấp cho bạn một phương pháp độc đáo và hấp dẫn để loại bỏ cơn nghiện một cách dễ dàng và không đau đớn.
+
+<span style="font-size:smaller;">**Hackbook:** Một cuốn sách được dựa trên một cuốn sách khác. Tác giả gốc được ghi nguồn đầy đủ. </span>
+
+A number of communities exist for the hackbook as well, but would recommend checking them out only after you've finished reading the book.
+
+[urbit](https://urbit.org) - ~racnec-palren/hello | [coomer meme archive](https://coomer.org) ) | [discord](https://discord.gg/EzdjszZeQc) | [reddit](https://reddit.com/r/pmohackbook) | [feedback form](https://forms.gle/p7cTxowaNpKqgi5Z7)
+
 Nhắc lại là: <span style="font-size:larger;">**KHÔNG BỎ QUA CHƯƠNG**</span>
 
-## Thông tin thêm về dự án dịch
+Chúc may mắn, nhưng bạn sẽ sớm tìm được cho mình thứ bạn cần trong cuốn sách này thôi.
 
-Một dự án từ [Khu thoát nghiện](https://khuthoatnghien.github.io).
+Good vibes,
 
-[Tải tệp EPUB](noi-dung-khieu-dam.epub)
+Hackauthor²
 
-Lý do đặt tên của sách: Từ tên của tác phẩm "Thoát Á Luận" (脱亜論).
+![Creative Commons License Image](images/cc.png)
+
+Cuốn sách này được phát hành dưới giấy phép [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). Phần code được phát hành dưới giấy phép [GPLv3](https://gitlab.com/snuggy/easypeasy/-/blob/master/LICENSE).

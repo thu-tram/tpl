@@ -4,3 +4,6 @@ language = "vi"
 multilingual = false
 src = "src"
 title = "Thoát porn luận"
+
+[output.html]
+git-repository-url = "https://github.com/thu-tram/tpl"
